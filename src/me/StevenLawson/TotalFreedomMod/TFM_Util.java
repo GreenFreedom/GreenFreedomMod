@@ -71,7 +71,7 @@ public class TFM_Util
     // See https://github.com/TotalFreedom/License - None of the listed names may be removed.
     public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "Prozza", "DarthSalmon", "AcidicCyanide", "Wild1145", "WickedGamingUK");
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "xDestroyer217", "Freelix2000", "Cyro1999"); // this isn't used, but we are keeping it for credit reasoning
-    public static final List<String> RF_DEVELOPERS = Arrays.asList("Valencia_Orange", "AwesomePinch");
+    public static final List<String> RF_DEVELOPERS = Arrays.asList("Valencia_Orange", "AwesomePinch", "Alco_Rs11");
     public static final List<String> EXECUTIVES = Arrays.asList("Alosion", "ItzTrae", "DecstarPlayzMC");
     public static final List<String> SYS = Arrays.asList("cowgomooo12", "MysteriAce", "eddieusselman", "xYurippe", "Stampy100", "DarkHorse108", "Charlotte474747");
     public static final List<String> SPECIALISTS = Arrays.asList("reuben4545");
