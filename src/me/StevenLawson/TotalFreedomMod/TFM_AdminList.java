@@ -155,7 +155,7 @@ public class TFM_AdminList
 
         for (TFM_Admin admin : adminList.values())
         {
-            if (admin.isTelnetAdmin())
+            if (admin.isSeniorAdmin())
             {
                 names.add(admin.getLastLoginName());
             }
