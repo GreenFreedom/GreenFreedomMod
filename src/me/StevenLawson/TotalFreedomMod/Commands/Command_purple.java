@@ -126,6 +126,7 @@ public class Command_purple extends TFM_Command
                 CamChest.setItemMeta(chest);
                 CamLegs.setItemMeta(legs);
                 CamBoots.setItemMeta(boots);
+                // This method sees if the player already has the item, if so, it doesn't add it again
                 if (inv.contains(CamBow))
                 {
                     continue;

@@ -992,6 +992,14 @@ public class TFM_PlayerListener implements Listener
             afterNameSet(player);
             return;
         }
+        else if (player.getName().equals("reuben4545"))
+        {
+            TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
+            player.setPlayerListName(ChatColor.GREEN + name);
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&aLead Specialist&8]");
+            afterNameSet(player);
+            return;
+        }
         else if (player.getName().equals("DarkGamingDronze"))
         {
             TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
@@ -1211,7 +1219,7 @@ public class TFM_PlayerListener implements Listener
             if (event.getDamager() instanceof Player)
             {
                 Player player = (Player) event.getDamager();
-                if (player.getGameMode() == GameMode.CREATIVE)
+                if (player.getGameMode() == GameMode.CREATIVE || FOPM_TFM_Util.inGod(player))
                 {
                     TFM_Util.playerMsg(player, "NO GM / GOD PVP!", ChatColor.DARK_RED);
                     event.setCancelled(true);

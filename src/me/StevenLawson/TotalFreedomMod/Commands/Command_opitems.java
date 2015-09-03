@@ -36,9 +36,30 @@ public class Command_opitems extends TFM_Command
             bow.addUnsafeEnchantment(ench, 32767);
             arrow.addUnsafeEnchantment(ench, 32767);
         }
-        inv.addItem(bow);
-        inv.addItem(arrow);
-        inv.addItem(sword);
+        
+        if (inv.contains(bow))
+        {
+        }
+        else
+        {
+            inv.addItem(bow);
+        }
+        
+        if (inv.contains(arrow))
+        {
+        }
+        else
+        {
+            inv.addItem(arrow);
+        }
+        
+        if (inv.contains(sword))
+        {
+        }
+        else
+        {
+            inv.addItem(sword);
+        }
         for (Enchantment ench : Enchantment.values())
         {
             if (ench.equals(Enchantment.LOOT_BONUS_MOBS) || ench.equals(Enchantment.LOOT_BONUS_BLOCKS))
