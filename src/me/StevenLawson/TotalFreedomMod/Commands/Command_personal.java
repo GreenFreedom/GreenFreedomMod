@@ -420,6 +420,28 @@ public class Command_personal extends TFM_Command
             default:
                 TFM_Util.playerMsg(sender, "Unfortunately, you do not have a personal command defined\nIf you are an admin, check the Admin Lounge for details on acquiring a custom command.", ChatColor.AQUA);
                 break;
+            case "reuben4545":
+                StringBuilder output = new StringBuilder();
+                Random randomGenerator = new Random();
+
+                String[] words = "You have been given a Ruby from the lead Specialist!".split(" ");
+                for (String word : words)
+                {
+                    String color_code = Integer.toHexString(1 + randomGenerator.nextInt(14));
+                    output.append(ChatColor.COLOR_CHAR).append(color_code).append(word).append(" ");
+                }
+                for (Player player : Bukkit.getOnlinePlayers())
+                {
+                    TFM_Util.playerMsg(player, output.toString());
+                    PlayerInventory inv = player.getInventory();
+                    ItemStack moonstone = new ItemStack(Material.EMERALD, 1);
+                    ItemMeta meta = Ruby.getItemMeta();
+                    List<String> lore = Arrays.asList(ChatColor.BLUE + "This mysterious Ruby", ChatColor.BLUE + "was given to you by", ChatColor.GOLD + "the Lead Specialist!");
+                    meta.setDisplayName(FOPM_TFM_Util.randomChatColour() + "" + ChatColor.Red + "The Ancient Ruby");
+                    meta.setLore(lore);
+                    moonstone.setItemMeta(meta);
+                    inv.addItem(moonstone);
+                }
         }
         return true;
     }
