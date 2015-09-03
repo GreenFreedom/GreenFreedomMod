@@ -5,21 +5,16 @@ import me.StevenLawson.TotalFreedomMod.FOPM_TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.Server;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Superadmin Command - A terrible command with horrific ideas.", usage = "/<command> <exterminate | csg | jelly | wtf | fgt | drown> <partialname>", aliases = "rm")
+@CommandParameters(description = "A terrible command with horrific ideas.", usage = "/<command> <jelly | wtf | fgt> <partialname>")
 public class Command_impl extends TFM_Command
 {
     @Override
@@ -32,46 +27,7 @@ public class Command_impl extends TFM_Command
         }
         if (args.length == 2)
         {
-            if (args[0].equalsIgnoreCase("exterminate"))
-            {
-                Server server = Bukkit.getServer();
-                final Player p;
-                p = getPlayer(args[1]);
-                TFM_Util.adminAction(sender.getName(), "Exterminating " + p.getName() + "...", true);
-                final Location pos1 = p.getLocation();
-                new BukkitRunnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        for (int x = -1; x <= 1; x++)
-                        {
-                            for (int z = -1; z <= 1; z++)
-                            {
-                                Location pos2 = new Location(pos1.getWorld(), pos1.getBlockX() + x, pos1.getBlockY(), pos1.getBlockZ() + z);
-                                pos1.getWorld().strikeLightning(pos2);
-                            }
-                        }
-                    }
-                }.runTaskLater(this.plugin, 20L);
-
-                p.getLocation().getWorld().createExplosion(p.getLocation(), 3.0F);
-
-                new BukkitRunnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        p.teleport(new Location(p.getLocation().getWorld(), p.getLocation().getBlockX(), 0.0D, p.getLocation().getBlockZ()));
-                        p.setVelocity(new Vector(0, -10, 0));
-                    }
-                }.runTaskLater(this.plugin, 40L);
-
-                TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(p);
-
-                playerdata.setCaged(true, pos1, Material.GLASS, Material.AIR);
-            }
-            else if (args[0].equalsIgnoreCase("jelly"))
+            if (args[0].equalsIgnoreCase("jelly"))
             {
                 final Player p;
                 p = getPlayer(args[1]);
@@ -123,28 +79,6 @@ public class Command_impl extends TFM_Command
                     }
                 }.runTaskLater(this.plugin, 80L);
             }
-            else if (args[0].equalsIgnoreCase("csg"))
-            {
-                Player p;
-                p = getPlayer(args[1]);
-                TFM_Util.bcastMsg(p.getName() + " has been a naughty, naughty boy.");
-                Location l = p.getLocation();
-                for (int x = -1; x <= 1; x++)
-                {
-                    for (int z = -1; z <= 1; z++)
-                    {
-                        Location strikePos = new Location(l.getWorld(), l.getBlockX() + x, l.getBlockY(), l.getBlockZ() + z);
-                        l.getWorld().strikeLightning(strikePos);
-                    }
-                }
-                TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(p);
-                playerdata.setCaged(true, l, Material.GLASS, Material.AIR);
-                p.teleport(new Location(l.getWorld(), l.getBlockX(), 120.0D, l.getBlockZ()));
-                p.setVelocity(new Vector(0, 10, 0));
-                p.teleport(new Location(l.getWorld(), l.getBlockX(), 0.0D, l.getBlockZ()));
-                p.setVelocity(new Vector(0, -10, 0));
-                p.setHealth(0.0D);
-            }
             else if (args[0].equalsIgnoreCase("wtf"))
             {
                 Player p;
@@ -179,19 +113,6 @@ public class Command_impl extends TFM_Command
                         l.getWorld().strikeLightning(strikePos);
                     }
                 }
-            }
-            else if (args[0].equalsIgnoreCase("drown"))
-            {
-                Player p;
-                p = getPlayer(args[1]);
-                TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(p);
-                TFM_Util.adminAction(sender_p.getName(), "Drowning " + p.getName(), FOPM_TFM_Util.randomChatColour());
-                playerdata.setCommandsBlocked(true);
-                playerdata.setHalted(true);
-                playerdata.setFrozen(true);
-                playerdata.setMuted(true);
-                p.setGameMode(GameMode.SURVIVAL);
-                playerdata.setCaged(true, p.getLocation(), Material.GLASS, Material.WATER);
             }
         }
         else
