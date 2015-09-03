@@ -27,6 +27,7 @@ public class TFM_ProtectedArea
         throw new AssertionError();
     }
 
+    @SuppressWarnings("UnusedAssignment")
     public static boolean isInProtectedArea(final Location modifyLocation)
     {
         boolean doSave = false;
@@ -72,6 +73,7 @@ public class TFM_ProtectedArea
         return inProtectedArea;
     }
 
+    @SuppressWarnings("UnusedAssignment")
     public static boolean isInProtectedArea(final Vector min, final Vector max, final String worldName)
     {
         boolean doSave = false;
@@ -212,6 +214,7 @@ public class TFM_ProtectedArea
         return TFM_ProtectedArea.PROTECTED_AREAS.keySet();
     }
 
+    @SuppressWarnings("ConvertToTryWithResources")
     public static void save()
     {
         try
@@ -228,7 +231,7 @@ public class TFM_ProtectedArea
         }
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({"unchecked", "ConvertToTryWithResources", "UseSpecificCatch"})
     public static void load()
     {
         if (!TFM_ConfigEntry.PROTECTAREA_ENABLED.getBoolean())

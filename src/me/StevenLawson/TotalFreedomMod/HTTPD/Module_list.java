@@ -31,11 +31,15 @@ public class Module_list extends TFM_HTTPD_Module {
                     prefix = "[SA]";
                 }
 
-                if (TFM_Util.DEVELOPERS.contains(player.getName())) {
+                if (TFM_Util.RF_DEVELOPERS.contains(player.getName())) {
                     prefix = "[Dev]";
                 }
+                
+                if (player.getName().equals("tylerhyperHD")) {
+                    prefix = "[Lead Dev]";
+                }
 
-                if (player.getName().equals("markbyron")) {
+                if (player.getName().equals("falceso") && player.getName().equals("DarkGamingDronze")) {
                     prefix = "[Owner]";
                 }
             } else {
@@ -54,6 +58,6 @@ public class Module_list extends TFM_HTTPD_Module {
 
     @Override
     public String getTitle() {
-        return "Total Freedom - Online Users";
+        return "RubyFreedom - Online Users";
     }
 }

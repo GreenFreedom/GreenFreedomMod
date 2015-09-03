@@ -34,6 +34,7 @@ public class TFM_TwitterHandler
         return request("action=deltwitter&player=" + player);
     }
 
+    @SuppressWarnings("ConvertToStringSwitch")
     public static void delTwitterVerbose(String targetName, CommandSender sender)
     {
         final String reply = delTwitter(targetName);
@@ -77,6 +78,7 @@ public class TFM_TwitterHandler
         return request("action=setstatus&status=" + status);
     }
 
+    @SuppressWarnings("ConvertToTryWithResources")
     private static String request(String queryString)
     {
         String line = "failed";

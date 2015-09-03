@@ -8,7 +8,6 @@ import me.StevenLawson.TotalFreedomMod.TFM_Log;
 
 public class TFM_SqlUtil
 {
-
     public static boolean hasTable(Connection con, String table)
     {
         try
@@ -98,5 +97,4 @@ public class TFM_SqlUtil
             return false;
         }
     }
-
 }

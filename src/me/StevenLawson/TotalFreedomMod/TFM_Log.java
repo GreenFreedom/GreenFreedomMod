@@ -3,6 +3,7 @@ package me.StevenLawson.TotalFreedomMod;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@SuppressWarnings("NonConstantLogger")
 public class TFM_Log
 {
     private static final Logger FALLBACK_LOGGER = Logger.getLogger("Minecraft-Server");

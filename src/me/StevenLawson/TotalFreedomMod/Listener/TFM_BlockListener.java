@@ -55,6 +55,7 @@ public class TFM_BlockListener implements Listener
 
             final Location playerLocation = player.getLocation();
 
+            @SuppressWarnings("UnnecessaryUnboxing")
             final double nukeMonitorRange = TFM_ConfigEntry.NUKE_MONITOR_RANGE.getDouble().doubleValue();
 
             boolean outOfRange = false;
@@ -125,6 +126,7 @@ public class TFM_BlockListener implements Listener
 
             Location playerLocation = player.getLocation();
 
+            @SuppressWarnings("UnnecessaryUnboxing")
             double nukeMonitorRange = TFM_ConfigEntry.NUKE_MONITOR_RANGE.getDouble().doubleValue();
 
             boolean outOfRange = false;

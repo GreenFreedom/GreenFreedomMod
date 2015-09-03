@@ -23,6 +23,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
+@SuppressWarnings("Convert2Lambda")
 public class TFM_AdminList
 {
     public static final Function<Player, Boolean> SUPERADMIN_SERVICE;

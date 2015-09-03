@@ -12,6 +12,7 @@ public class TFM_HTTPD_PageBuilder
             + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n"
             + "{$STYLE}"
             + "{$SCRIPT}"
+            + "<link rel=\"stylesheet\" href=\"https://dl.dropboxusercontent.com/u/17588097/bootstrap.css\" />\r\n"
             + "</head>\r\n"
             + "<body>\r\n{$BODY}</body>\r\n"
             + "</html>\r\n";

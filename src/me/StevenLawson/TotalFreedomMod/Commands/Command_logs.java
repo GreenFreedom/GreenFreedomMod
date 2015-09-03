@@ -57,6 +57,7 @@ public class Command_logs extends TFM_Command
         new BukkitRunnable()
         {
             @Override
+            @SuppressWarnings("UseSpecificCatch")
             public void run()
             {
                 try

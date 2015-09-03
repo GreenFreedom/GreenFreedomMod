@@ -71,6 +71,7 @@ public class TFM_ServiceChecker
         return new BukkitRunnable()
         {
             @Override
+            @SuppressWarnings("ConvertToTryWithResources")
             public void run()
             {
                 if (url == null)
@@ -163,6 +164,7 @@ public class TFM_ServiceChecker
 
     public static class ServiceStatus
     {
+        @SuppressWarnings("FieldMayBeFinal")
         private String name;
         private String uptime = "100.0"; // skins.minecraft.net, minecraft.net, etc..
         private ChatColor color = ChatColor.DARK_GREEN;
@@ -225,6 +227,7 @@ public class TFM_ServiceChecker
             this.color = color;
         }
 
+        @SuppressWarnings("ConvertToStringSwitch")
         public void setColor(String color)
         {
             if ("green".equals(color))

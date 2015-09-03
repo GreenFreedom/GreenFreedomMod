@@ -1,4 +1,4 @@
-package me.StevenLawson.TotalFreedomMod.Bridge;
+package me.StevenLawson.TotalFreedomMod.Listener;
 
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_ProtectedArea;
@@ -12,7 +12,6 @@ import org.bukkit.event.Listener;
 
 public class TFM_WorldEditListener implements Listener
 {
-
     @EventHandler
     public void onSelectionChange(final SelectionChangedEvent event)
     {

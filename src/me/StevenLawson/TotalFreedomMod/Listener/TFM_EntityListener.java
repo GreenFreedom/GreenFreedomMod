@@ -37,6 +37,7 @@ public class TFM_EntityListener implements Listener
     }
 
     @EventHandler(priority = EventPriority.HIGH)
+    @SuppressWarnings("UnnecessaryUnboxing")
     public void onExplosionPrime(ExplosionPrimeEvent event)
     {
         if (!TFM_ConfigEntry.ALLOW_EXPLOSIONS.getBoolean())
@@ -136,6 +137,7 @@ public class TFM_EntityListener implements Listener
                 return;
             }
 
+            @SuppressWarnings("UnnecessaryUnboxing")
             int mobLimiterMax = TFM_ConfigEntry.MOB_LIMITER_MAX.getInteger().intValue();
 
             if (mobLimiterMax > 0)

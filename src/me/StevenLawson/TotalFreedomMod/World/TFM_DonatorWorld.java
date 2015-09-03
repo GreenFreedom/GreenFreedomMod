@@ -85,6 +85,7 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         return world;
     }
 
+    @SuppressWarnings("UnnecessaryUnboxing")
     public boolean validateMovement(PlayerMoveEvent event)
     {
         World world;
@@ -131,6 +132,7 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         accessCache.clear();
     }
 
+    @SuppressWarnings("UnnecessaryUnboxing")
     public boolean canAccessWorld(final Player player)
     {
         long currentTimeMillis = System.currentTimeMillis();

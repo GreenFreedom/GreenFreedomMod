@@ -1,6 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.Bridge.TFM_WorldEditBridge;
+import me.StevenLawson.TotalFreedomMod.FOPM_TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
@@ -75,7 +76,7 @@ public class Command_impl extends TFM_Command
                 final Player p;
                 p = getPlayer(args[1]);
                 final Location loc = p.getLocation();
-                TFM_Util.bcastMsg("Hey " + p.getName() + ", what's the difference between jelly and jam?", ChatColor.RED);
+                TFM_Util.bcastMsg("Hey " + p.getName() + ", what's the difference between jelly and jam?", FOPM_TFM_Util.randomChatColour());
                 for (int x = -1; x <= 1; x++)
                 {
                     for (int z = -1; z <= 1; z++)
@@ -89,7 +90,7 @@ public class Command_impl extends TFM_Command
                     @Override
                     public void run()
                     {
-                        TFM_Util.bcastMsg("I can't jelly my banhammer up your ass.", ChatColor.RED);
+                        TFM_Util.bcastMsg("I can't jelly my banhammer up your ass.", FOPM_TFM_Util.randomChatColour());
                         loc.getWorld().createExplosion(loc, 3.0F);
                         p.setHealth(0.0D);
                         p.closeInventory();
@@ -148,7 +149,7 @@ public class Command_impl extends TFM_Command
             {
                 Player p;
                 p = getPlayer(args[1]);
-                TFM_Util.bcastMsg(p.getName() + " is being a damn idiot.", ChatColor.RED);
+                TFM_Util.bcastMsg(p.getName() + " is being a damn idiot.", FOPM_TFM_Util.randomChatColour());
                 p.sendMessage(ChatColor.RED + "What the hell are you doing you damn idiot?");
                 Location l = p.getLocation();
                 for (int x = -1; x <= 1; x++)
@@ -165,7 +166,7 @@ public class Command_impl extends TFM_Command
             {
                 Player p;
                 p = getPlayer(args[1]);
-                TFM_Util.bcastMsg(p.getName() + " doesn't know when to stop.", ChatColor.RED);
+                TFM_Util.bcastMsg(p.getName() + " doesn't know when to stop.", FOPM_TFM_Util.randomChatColour());
                 p.getInventory().clear();
                 p.closeInventory();
                 p.setHealth(0.0D);
@@ -184,7 +185,7 @@ public class Command_impl extends TFM_Command
                 Player p;
                 p = getPlayer(args[1]);
                 TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(p);
-                TFM_Util.adminAction(sender_p.getName(), "Drowning " + p.getName(), true);
+                TFM_Util.adminAction(sender_p.getName(), "Drowning " + p.getName(), FOPM_TFM_Util.randomChatColour());
                 playerdata.setCommandsBlocked(true);
                 playerdata.setHalted(true);
                 playerdata.setFrozen(true);

@@ -95,7 +95,7 @@ public class TFM_Util
     public static ArrayList<String> imposters = new ArrayList<>();
     public static final List<String> permbannedNames = HARDCODE;
     public static final List<String> permbannedIps = HARDCODE_IPS;
-    
+
     static
     {
         for (EntityType type : EntityType.values())
@@ -140,7 +140,7 @@ public class TFM_Util
     {
         TFM_Util.bcastMsg(message, null);
     }
-    
+
     public static void telnetFix(String message, ChatColor color)
     {
         TFM_Log.info(message, true);
@@ -177,11 +177,21 @@ public class TFM_Util
         player.setFlying(flying);
     }
 
+    public static void adminAction(String adminName, String action)
+    {
+        TFM_Util.bcastMsg(adminName + " - " + action);
+    }
+
+    public static void adminAction(String adminName, String action, ChatColor color)
+    {
+        TFM_Util.bcastMsg(adminName + " - " + action, color);
+    }
+
     public static void adminAction(String adminName, String action, boolean isRed)
     {
         TFM_Util.bcastMsg(adminName + " - " + action, (isRed ? ChatColor.RED : ChatColor.AQUA));
     }
-    
+
     public static void telnetMessage(String adminName, String action, boolean isRed)
     {
         TFM_Util.telnetFix(adminName + " - " + action, (isRed ? ChatColor.RED : ChatColor.AQUA));
@@ -677,7 +687,10 @@ public class TFM_Util
         return StringUtils.join(names, ", ");
     }
 
-    @SuppressWarnings({"unchecked", "UseSpecificCatch", "ConvertToTryWithResources"})
+    @SuppressWarnings(
+    {
+        "unchecked", "UseSpecificCatch", "ConvertToTryWithResources"
+    })
     public static Map<String, Boolean> getSavedFlags()
     {
         Map<String, Boolean> flags = null;

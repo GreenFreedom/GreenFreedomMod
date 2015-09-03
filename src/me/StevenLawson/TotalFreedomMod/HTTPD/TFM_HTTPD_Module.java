@@ -52,6 +52,7 @@ public abstract class TFM_HTTPD_Module
         return new TFM_HTTPD_PageBuilder(getBody(), getTitle(), getStyle(), getScript()).getResponse();
     }
 
+    @SuppressWarnings("UseSpecificCatch")
     protected final Map<String, String> getFiles()
     {
         Map<String, String> files = new HashMap<String, String>();

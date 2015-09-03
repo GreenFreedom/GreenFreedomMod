@@ -17,9 +17,7 @@ import org.bukkit.entity.Player;
 
 public class FOPM_TFM_Util
 {
-    /*
-     *  Uses extremely old FOPM changes to the TFM
-     */
+// Uses extremely old FOPM changes to the TFM
     
     public static final List<ChatColor> COLOURS = Arrays.asList(
             ChatColor.DARK_BLUE,
@@ -73,11 +71,11 @@ public class FOPM_TFM_Util
     public static void DevChatMessage(CommandSender sender, String message, boolean senderIsConsole)
     {
         String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[DevChat] " + name + ": " + message);
+        TFM_Log.info("[Dev Chat] " + name + ": " + message);
 
         for (Player player : Bukkit.getOnlinePlayers())
         {
-            if (player.getName().equals("tylerhyperHD") && RF_DEVELOPERS.contains(player.getName()) || TFM_ConfigEntry.SERVER_OWNERS.getList().contains(player.getName()) || COOWNER.contains(player.getName()))
+            if (player.getName().equals("tylerhyperHD") || RF_DEVELOPERS.contains(player.getName()) || TFM_ConfigEntry.SERVER_OWNERS.getList().contains(player.getName()) || COOWNER.contains(player.getName()))
             {
                 player.sendMessage(ChatColor.AQUA + "[" + ChatColor.DARK_PURPLE + "Dev Chat" + ChatColor.AQUA + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.RED + message);
             }

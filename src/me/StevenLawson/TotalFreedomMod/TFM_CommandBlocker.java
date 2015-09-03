@@ -72,7 +72,8 @@ public class TFM_CommandBlocker
             // Obtain command from alias
             if (command == null)
             {
-                TFM_Log.info("Blocking unknown command: /" + commandName);
+                // Can we remove debug?
+                // TFM_Log.info("Blocking unknown command: /" + commandName);
             }
             else
             {

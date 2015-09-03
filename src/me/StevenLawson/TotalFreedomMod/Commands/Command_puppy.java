@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(description = "Pupp", aliases = "pup", usage = "/<command>")
+@CommandParameters(description = "Puppy!", aliases = "pup", usage = "/<command>")
 public class Command_puppy extends TFM_Command
 {
     @Override

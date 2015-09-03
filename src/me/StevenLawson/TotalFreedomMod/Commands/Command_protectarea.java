@@ -8,9 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
-@CommandParameters(
-        description = "Protect areas so that only superadmins can directly modify blocks in those areas. WorldEdit and other such plugins might bypass this.",
-        usage = "/<command> <list | clear | remove <label> | add <label> <radius>>")
+@CommandParameters(description = "Protect areas so that only superadmins can directly modify blocks in those areas. WorldEdit and other such plugins might bypass this.", usage = "/<command> <list | clear | remove <label> | add <label> <radius>>")
 public class Command_protectarea extends TFM_Command
 {
 
@@ -19,7 +17,7 @@ public class Command_protectarea extends TFM_Command
     {
         if (!TFM_ConfigEntry.PROTECTAREA_ENABLED.getBoolean())
         {
-            playerMsg("Protected areas are currently disabled in the TotalFreedomMod configuration.");
+            playerMsg("Protected areas are currently disabled in the RubyFreedomMod configuration.");
             return true;
         }
 

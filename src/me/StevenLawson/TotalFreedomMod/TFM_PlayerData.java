@@ -19,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class TFM_PlayerData
 {
     public static final Map<String, TFM_PlayerData> PLAYER_DATA = new HashMap<String, TFM_PlayerData>(); // ip,data
@@ -36,7 +37,7 @@ public class TFM_PlayerData
             return getPlayerData(player);
         }
     }
-
+    
     public static TFM_PlayerData getPlayerData(Player player)
     {
         final String ip = TFM_Util.getIp(player);
@@ -620,7 +621,7 @@ public class TFM_PlayerData
             this.material = material;
         }
     }
-
+    
     private class ArrowShooter extends BukkitRunnable
     {
         private Player player;

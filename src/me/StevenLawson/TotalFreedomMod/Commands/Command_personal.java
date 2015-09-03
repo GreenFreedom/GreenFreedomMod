@@ -75,11 +75,11 @@ public class Command_personal extends TFM_Command
                     dog.setCustomName(ChatColor.DARK_AQUA + "Doggie");
                     player.setOp(true);
                     player.sendRawMessage(TFM_Command.YOU_ARE_OP);
+                }
                     TFM_Util.bcastMsg("Except you Robin, you get nothing u whore XD", ChatColor.RED);
                     Player sender_robin = Bukkit.getPlayer(sender.getName());
                     sender_robin.chat("U whore.");
                     sender_robin.setHealth(0.0);
-                }
                 break;
             case "book":
                 for (Player player : Bukkit.getOnlinePlayers())
@@ -105,10 +105,10 @@ public class Command_personal extends TFM_Command
                 {
                     FOPM_TFM_Util.spawnMob(player, EntityType.COW, 2);
                 }
-                TFM_Util.adminAction(sender_p.getName(), "Let there be cows!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Let there be cows!", FOPM_TFM_Util.randomChatColour());
                 break;
             case "multiTyph":
-                TFM_Util.bcastMsg("Incoming Oblivion!", ChatColor.RED);
+                TFM_Util.bcastMsg("Incoming Oblivion!", FOPM_TFM_Util.randomChatColour());
                 for (World world : Bukkit.getWorlds())
                 {
                     for (Entity entity : world.getEntities())
@@ -128,12 +128,11 @@ public class Command_personal extends TFM_Command
                             livEntity.setHealth(0);
                         }
                     }
-                    for (final Player player : server.getOnlinePlayers())
+                    for (final Player player : Bukkit.getOnlinePlayers())
                     {
                         for (double percent = 0.0; percent <= 1.0; percent += (1.0 / STEPS))
                         {
                             final float pitch = (float) (percent * 2.0);
-
                             new BukkitRunnable()
                             {
                                 @Override
@@ -147,7 +146,7 @@ public class Command_personal extends TFM_Command
                 }
                 break;
             case "Cyro1999":
-                TFM_Util.adminAction(sender_p.getName(), "Pies for all!.", false);
+                TFM_Util.adminAction(sender_p.getName(), "Pies for all!", FOPM_TFM_Util.randomChatColour());
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -161,7 +160,7 @@ public class Command_personal extends TFM_Command
                 }
                 break;
             case "tylerhyperHD":
-                TFM_Util.adminAction(ChatColor.RED + sender.getName(), ChatColor.WHITE + "" + ChatColor.BOLD + "BEHOLD! THE " + ChatColor.BLACK + "" + ChatColor.BOLD + "LIE " + ChatColor.WHITE + "" + ChatColor.BOLD + "GOD!", true);
+                TFM_Util.adminAction(ChatColor.RED + sender.getName(), ChatColor.WHITE + "" + ChatColor.BOLD + "BEHOLD! THE " + ChatColor.BLACK + "" + ChatColor.BOLD + "LIE " + ChatColor.WHITE + "" + ChatColor.BOLD + "GOD!");
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -210,7 +209,7 @@ public class Command_personal extends TFM_Command
                 break;
             case "weed":
                 Player sender_weed = Bukkit.getPlayer(sender.getName());
-                TFM_Util.adminAction(sender_weed.getName(), "SMOKE WEED EVERY DAY!", true);
+                TFM_Util.adminAction(sender_weed.getName(), "SMOKE WEED EVERY DAY!", FOPM_TFM_Util.randomChatColour());
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -218,25 +217,13 @@ public class Command_personal extends TFM_Command
                     ItemMeta meta = weed.getItemMeta();
                     World world = player.getWorld();
                     Location loc = player.getLocation();
-                    meta.setDisplayName(ChatColor.LIGHT_PURPLE + "" + ChatColor.BOLD + "WEED");
+                    meta.setDisplayName(FOPM_TFM_Util.randomChatColour() + "" + ChatColor.BOLD + "WEED");
                     List<String> lore = Arrays.asList(ChatColor.LIGHT_PURPLE + "Don't do drugs kids. I never should have wrote this.");
                     meta.setLore(lore);
                     meta.addEnchant(Enchantment.FIRE_ASPECT, 32767, true);
                     meta.addEnchant(Enchantment.KNOCKBACK, 32767, true);
                     weed.setItemMeta(meta);
                     inv.addItem(weed);
-                }
-                break;
-            case "multiEagle":
-                for (Player player : Bukkit.getOnlinePlayers())
-                {
-                    PlayerInventory inv = player.getInventory();
-                    ItemStack potato = new ItemStack(Material.POTATO_ITEM, 1);
-                    ItemMeta meta = potato.getItemMeta();
-                    List<String> lore = Arrays.asList(ChatColor.DARK_PURPLE + "It's dangerous to go alone; take this!");
-                    meta.setLore(lore);
-                    potato.setItemMeta(meta);
-                    inv.addItem(potato);
                 }
                 break;
             case "TheLunarPrincess":
@@ -256,14 +243,14 @@ public class Command_personal extends TFM_Command
                     ItemStack moonstone = new ItemStack(Material.NETHER_STAR, 1);
                     ItemMeta meta = moonstone.getItemMeta();
                     List<String> lore = Arrays.asList(ChatColor.BLUE + "This mysterious stone", ChatColor.BLUE + "was given to you by", ChatColor.GOLD + "the Moon Princess!");
-                    meta.setDisplayName(TFM_Util.randomChatColor() + "" + ChatColor.BOLD + "Moonstone");
+                    meta.setDisplayName(FOPM_TFM_Util.randomChatColour() + "" + ChatColor.BOLD + "Moonstone");
                     meta.setLore(lore);
                     moonstone.setItemMeta(meta);
                     inv.addItem(moonstone);
                 }
                 break;
             case "Dev238":
-                TFM_Util.adminAction(sender.getName(), "You have been DEV'D!!!", true);
+                TFM_Util.adminAction(sender.getName(), "You have been DEV'D!!!", FOPM_TFM_Util.randomChatColour());
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -271,7 +258,7 @@ public class Command_personal extends TFM_Command
                 }
                 break;
             case "CrafterSmith12":
-                TFM_Util.adminAction(sender_p.getName(), "Cookies for all! Don't let others take yours!", true);
+                TFM_Util.adminAction(sender_p.getName(), "Cookies for all! Don't let others take yours!", FOPM_TFM_Util.randomChatColour());
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -284,7 +271,7 @@ public class Command_personal extends TFM_Command
                 }
                 break;
             case "Valencia_Orange":
-                TFM_Util.adminAction(sender_p.getName(), "You can never get tired of sticks! Come on! They're Sticks!", true);
+                TFM_Util.adminAction(sender_p.getName(), "You can never get tired of sticks! Come on! They're Sticks!", FOPM_TFM_Util.randomChatColour());
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -310,7 +297,7 @@ public class Command_personal extends TFM_Command
                 break;
             case "xBadDawgx":
                 FOPM_TFM_Util.asciiDog();
-                TFM_Util.adminAction(sender_p.getName(), "Giving everyone a pet Woofie.\nTame them with the bone!", false);
+                TFM_Util.adminAction(sender_p.getName(), "Giving everyone a pet Woofie.\nTame them with the bone!", ChatColor.GREEN);
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();
@@ -418,7 +405,7 @@ public class Command_personal extends TFM_Command
                     inv.addItem(wand);
                 }
             case "aggelosQQ":
-                TFM_Util.adminAction(sender_p.getName(), "Giving everyone a free egg! EGG FIGHT!", true);
+                TFM_Util.adminAction(sender_p.getName(), "Giving everyone a free egg! EGG FIGHT!", ChatColor.GREEN);
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
                     PlayerInventory inv = player.getInventory();

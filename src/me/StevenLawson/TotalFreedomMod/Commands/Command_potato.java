@@ -3,6 +3,7 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 import java.util.Random;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.bukkit.Achievement;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -23,7 +24,7 @@ public class Command_potato extends TFM_Command
     {
         if (!sender.getName().equalsIgnoreCase("tylerhyperHD") && !sender.getName().equalsIgnoreCase("cowgomooo12"))
         {
-            playerMsg("Only those with ultimate potato powers may use this command!", ChatColor.GRAY);
+            playerMsg("Only those with ultimate potato powers may use this command!", ChatColor.RED);
             return true;
         }
 
@@ -39,10 +40,17 @@ public class Command_potato extends TFM_Command
 
         ItemStack heldItem = new ItemStack(Material.POTATO_ITEM);
         ItemMeta heldItemMeta = heldItem.getItemMeta();
-        heldItemMeta.setDisplayName((new StringBuilder()).append(ChatColor.WHITE).append("Tyler's Special").append(ChatColor.BLACK).append(" Potato").toString());
+        if(sender.getName().equals("tylerhyperHD"))
+        {
+            heldItemMeta.setDisplayName((new StringBuilder()).append(ChatColor.WHITE).append("Tyler's Special").append(ChatColor.GRAY).append(" Potato").toString());
+        }
+        else
+        {
+            heldItemMeta.setDisplayName((new StringBuilder()).append(ChatColor.WHITE).append("Cow's Special").append(ChatColor.GRAY).append(" Potato").toString());
+        }
         heldItem.setItemMeta(heldItemMeta);
 
-        for (Player player : server.getOnlinePlayers())
+        for (Player player : Bukkit.getOnlinePlayers())
         {
             player.getInventory().setItem(player.getInventory().firstEmpty(), heldItem);
             player.awardAchievement(Achievement.THE_END);
