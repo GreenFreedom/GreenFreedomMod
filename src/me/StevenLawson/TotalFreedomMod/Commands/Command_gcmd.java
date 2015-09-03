@@ -34,6 +34,11 @@ public class Command_gcmd extends TFM_Command
         }
 
         final String outCommand = StringUtils.join(args, " ", 1, args.length);
+        
+        if (outCommand.contains(""))
+        {
+            
+        }
 
         if (TFM_CommandBlocker.isCommandBlocked(outCommand, sender))
         {
