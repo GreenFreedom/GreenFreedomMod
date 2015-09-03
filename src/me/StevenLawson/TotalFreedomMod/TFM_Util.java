@@ -74,7 +74,7 @@ public class TFM_Util
     public static final List<String> RF_DEVELOPERS = Arrays.asList("Valencia_Orange", "AwesomePinch");
     public static final List<String> EXECUTIVES = Arrays.asList("Alosion", "ItzTrae");
     public static final List<String> SYS = Arrays.asList("cowgomooo12", "MysteriAce", "eddieusselman", "xYurippe", "Stampy100", "xBadDawgx", "DarkHorse108", "NL_Fenix_NL", "Charlotte474747");
-    public static final List<String> SPECIALISTS = Arrays.asList("");
+    public static final List<String> SPECIALISTS = Arrays.asList("reuben4545");
     public static final List<String> COOWNER = Arrays.asList("TaahThePenguin", "AndySixx");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
