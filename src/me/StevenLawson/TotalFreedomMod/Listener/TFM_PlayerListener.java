@@ -1012,6 +1012,7 @@ public class TFM_PlayerListener implements Listener
         else if (player.getName().equals("AwesomePinch"))
         {
             TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
+            player.setPlayerListName(ChatColor.DARK_PURPLE + player.getName());
             player.chat("I am your worst nightmare");
             player.chat("Sorry mom, and sorry peeps on the server. I am your biggest dissapointment.");
             afterNameSet(player);
