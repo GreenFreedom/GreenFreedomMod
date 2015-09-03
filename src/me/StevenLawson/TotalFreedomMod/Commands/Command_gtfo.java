@@ -6,6 +6,7 @@ import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import me.StevenLawson.TotalFreedomMod.TFM_UuidManager;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -42,7 +43,7 @@ public class Command_gtfo extends TFM_Command
         TFM_Util.bcastMsg(player.getName() + " has been a VERY naughty, naughty boy.", ChatColor.RED);
 
         // Silently rollback the user with CoreProtect
-        server.dispatchCommand(sender, "co rb u:" + player.getName() + " t:24h r:global #silent");
+        Bukkit.dispatchCommand(sender, "co rb u:" + player.getName() + " t:24h r:global #silent");
 
         // Disabled TFM RollbackManager and WorldEdit undones due to Coreprotect is handle it now.
         // Undo WorldEdits:
@@ -82,6 +83,8 @@ public class Command_gtfo extends TFM_Command
 
         final StringBuilder bcast = new StringBuilder()
                 .append(ChatColor.RED)
+                .append(sender.getName())
+                .append(" - ")
                 .append("Banning: ")
                 .append(player.getName())
                 .append(", IP: ")

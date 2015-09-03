@@ -1,10 +1,12 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
-import me.StevenLawson.TotalFreedomMod.Bridge.TFM_WorldEditBridge;
 import me.StevenLawson.TotalFreedomMod.FOPM_TFM_Util;
+import me.StevenLawson.TotalFreedomMod.TFM_Ban;
+import me.StevenLawson.TotalFreedomMod.TFM_BanManager;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
-import me.StevenLawson.TotalFreedomMod.TFM_RollbackManager;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
+import me.StevenLawson.TotalFreedomMod.TFM_UuidManager;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -47,12 +49,11 @@ public class Command_impl extends TFM_Command
                     public void run()
                     {
                         TFM_Util.bcastMsg("I can't jelly my banhammer up your ass.", FOPM_TFM_Util.randomChatColour());
-                        loc.getWorld().createExplosion(loc, 3.0F);
+                        p.getWorld().createExplosion(p.getLocation().getX(), p.getLocation().getY(), p.getLocation().getZ(), 4f, false, false);
                         p.setHealth(0.0D);
                         p.closeInventory();
                         p.getInventory().clear();
-                        TFM_WorldEditBridge.undo(p, 15);
-                        TFM_RollbackManager.rollback(p.getName());
+                        Bukkit.dispatchCommand(sender, "co rb u:" + p.getName() + " t:24h r:global #silent");
                     }
                 }.runTaskLater(this.plugin, 60L);
 
@@ -61,28 +62,20 @@ public class Command_impl extends TFM_Command
                     @Override
                     public void run()
                     {
-                        String userIP = p.getAddress().getAddress().getHostAddress();
-                        String[] IPParts = userIP.split("\\.");
-                        if (IPParts.length == 4)
-                        {
-                            userIP = String.format("%s.%s.*.*", new Object[]
-                            {
-                                IPParts[0], IPParts[1]
-                            });
-                        }
+                        String userIP = TFM_Util.getFuzzyIp(p.getAddress().getAddress().getHostAddress());
                         TFM_Util.bcastMsg(String.format("%s - banning: %s, IP: %s.", new Object[]
                         {
                             sender.getName(), p.getName(), userIP
                         }), ChatColor.RED);
-                        server.dispatchCommand(sender, "glist ban " + p.getName());
-                        p.kickPlayer(ChatColor.RED + "You couldn't handle the banhammer.");
+                        TFM_BanManager.addIpBan(new TFM_Ban(userIP, p.getName(), sender.getName(), null, "You couldn't handle the ban hammer."));
+                        TFM_BanManager.addUuidBan(new TFM_Ban(TFM_UuidManager.getUniqueId(p), p.getName(), sender.getName(), null, "You couldn't handle the ban hammer."));
+                        p.kickPlayer(ChatColor.RED + "You couldn't handle the ban hammer.");
                     }
                 }.runTaskLater(this.plugin, 80L);
             }
             else if (args[0].equalsIgnoreCase("wtf"))
             {
-                Player p;
-                p = getPlayer(args[1]);
+                Player p = getPlayer(args[1]);
                 TFM_Util.bcastMsg(p.getName() + " is being a damn idiot.", FOPM_TFM_Util.randomChatColour());
                 p.sendMessage(ChatColor.RED + "What the hell are you doing you damn idiot?");
                 Location l = p.getLocation();
@@ -98,8 +91,7 @@ public class Command_impl extends TFM_Command
             }
             else if (args[0].equalsIgnoreCase("fgt"))
             {
-                Player p;
-                p = getPlayer(args[1]);
+                Player p = getPlayer(args[1]);
                 TFM_Util.bcastMsg(p.getName() + " doesn't know when to stop.", FOPM_TFM_Util.randomChatColour());
                 p.getInventory().clear();
                 p.closeInventory();
