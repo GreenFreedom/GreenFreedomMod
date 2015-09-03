@@ -63,6 +63,14 @@ public class Command_personal extends TFM_Command
             case "jumpymonkey123":
                 FOPM_TFM_Util.asciiUnicorn();
                 break;
+            case "AwesomePinch":
+                FOPM_TFM_Util.asciiUnicorn();
+                TFM_Util.bcastMsg(" Look", TFM_Util.randomChatColor());
+                TFM_Util.bcastMsg(" At", TFM_Util.randomChatColor());
+                TFM_Util.bcastMsg(" The", TFM_Util.randomChatColor());
+                TFM_Util.bcastMsg(" Pretty", TFM_Util.randomChatColor());
+                TFM_Util.bcastMsg(" Unicorn", TFM_Util.randomChatColor());
+                break;    
             case "xDestroyer217":
                 FOPM_TFM_Util.asciiDog();
                 TFM_Util.bcastMsg("hi doggies", TFM_Util.randomChatColor());
