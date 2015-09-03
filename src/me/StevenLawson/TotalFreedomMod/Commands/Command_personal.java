@@ -421,23 +421,19 @@ public class Command_personal extends TFM_Command
                 TFM_Util.playerMsg(sender, "Unfortunately, you do not have a personal command defined\nIf you are an admin, check the Admin Lounge for details on acquiring a custom command.", ChatColor.AQUA);
                 break;
             case "reuben4545":
-                StringBuilder output = new StringBuilder();
-                Random randomGenerator = new Random();
+                StringBuilder outme = new StringBuilder();
+                Random randomme = new Random();
 
-                String[] words = "You have been given a Ruby from the lead Specialist!".split(" ");
-                for (String word : words)
-                {
-                    String color_code = Integer.toHexString(1 + randomGenerator.nextInt(14));
-                    output.append(ChatColor.COLOR_CHAR).append(color_code).append(word).append(" ");
-                }
+                String color_code = Integer.toHexString(1 + randomme.nextInt(14));
+                outme.append(ChatColor.COLOR_CHAR).append(color_code).append("You have been given a Ruby from the lead Specialist!").append(" ");
                 for (Player player : Bukkit.getOnlinePlayers())
                 {
-                    TFM_Util.playerMsg(player, output.toString());
+                    TFM_Util.playerMsg(player, outme.toString());
                     PlayerInventory inv = player.getInventory();
                     ItemStack moonstone = new ItemStack(Material.EMERALD, 1);
-                    ItemMeta meta = Ruby.getItemMeta();
+                    ItemMeta meta = moonstone.getItemMeta();
                     List<String> lore = Arrays.asList(ChatColor.BLUE + "This mysterious Ruby", ChatColor.BLUE + "was given to you by", ChatColor.GOLD + "the Lead Specialist!");
-                    meta.setDisplayName(FOPM_TFM_Util.randomChatColour() + "" + ChatColor.Red + "The Ancient Ruby");
+                    meta.setDisplayName(FOPM_TFM_Util.randomChatColour() + "" + ChatColor.RED + "The Ancient Ruby");
                     meta.setLore(lore);
                     moonstone.setItemMeta(meta);
                     inv.addItem(moonstone);

@@ -28,14 +28,9 @@ public class Command_al extends TFM_Command
         sender.sendMessage(ChatColor.DARK_PURPLE + "Dev Team Mgr and Co-Lead Dev: DarkGamingDronze");
         sender.sendMessage(ChatColor.DARK_PURPLE + "Dev: Valencia_Orange");
         sender.sendMessage(ChatColor.DARK_PURPLE + "Dev: AwesomePinch");
-<<<<<<< Updated upstream
-        sender.sendMessage(ChatColor.RED + "The Admin Manager is DarkHorse108");
-        sender.sendMessage(ChatColor.GREEN + "The Lead Specialist is reuben4545")
-        sender.sendMessage(ChatColor.BLUE + "The Co-Owners are TaahThePenguin and LegendIsAwesomes");
-=======
         sender.sendMessage(ChatColor.RED + "Admin Manager: DarkHorse108");
+        sender.sendMessage(ChatColor.GREEN + "The Lead Specialist is reuben4545");
         sender.sendMessage(ChatColor.BLUE + "The Co-Owners are TaahThePenguin and AndySixx");
->>>>>>> Stashed changes
         sender.sendMessage(ChatColor.BLUE + "The Owners are falceso and DarkGamingDronze");
         return true;
     }
