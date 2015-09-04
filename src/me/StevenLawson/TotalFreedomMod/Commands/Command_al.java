@@ -1,5 +1,10 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
+import me.StevenLawson.TotalFreedomMod.Commands.AdminLevel;
+import me.StevenLawson.TotalFreedomMod.Commands.CommandParameters;
+import me.StevenLawson.TotalFreedomMod.Commands.CommandPermissions;
+import me.StevenLawson.TotalFreedomMod.Commands.SourceType;
+import me.StevenLawson.TotalFreedomMod.Commands.TFM_Command;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
