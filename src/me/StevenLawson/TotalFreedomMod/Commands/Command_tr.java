@@ -13,7 +13,7 @@ public class Command_tr extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (!sender.getName().equals("tylerhyperHD"))
+        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze") && !sender.getName().equals("AwesomePinch"))
         {
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
             return true;
