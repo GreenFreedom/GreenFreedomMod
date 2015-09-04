@@ -14,7 +14,7 @@ public class TFM_HTTPD_PageBuilder
             + "{$SCRIPT}"
             + "<link rel=\"stylesheet\" href=\"https://dl.dropboxusercontent.com/u/17588097/bootstrap.css\" />\r\n"
             + "</head>\r\n"
-            + "<body><div class=\"container\">\r\n{$BODY}</div></body>\r\n"
+            + "<body><div class=\"container\"><br/>\r\n{$BODY}</div></body>\r\n"
             + "</html>\r\n";
     private static final String STYLE = "<style type=\"text/css\">{$STYLE}</style>\r\n";
     private static final String SCRIPT = "<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js\"></script>\r\n"
