@@ -101,6 +101,11 @@ public enum TFM_PlayerRank
         {
             return LEAD_DEVELOPER;
         }
+        
+        else if (sender.getName().equals("MysteriAce"))
+        {
+            return MYSTERI;
+        }
 
         else if (sender.getName().equals("DarkHorse108"))
         {
