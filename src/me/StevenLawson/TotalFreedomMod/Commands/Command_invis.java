@@ -24,7 +24,6 @@ public class Command_invis extends TFM_Command
             if (args[0].equalsIgnoreCase("smite"))
             {
                 TFM_Util.adminAction(sender.getName(), "Smiting all invisible players", true);
-                 BarAPI.setMessage((full.length() <= 64 ? full : String.format("Smiting all invisible players!", player.getName())), 10);
                 smite = true;
             }
             else
