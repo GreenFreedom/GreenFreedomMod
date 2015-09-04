@@ -82,6 +82,20 @@ public class FOPM_TFM_Util
         }
     }
 
+    public static void TelnetAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Telnet-Admin] " + name + ": " + message);
+
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isTelnetAdmin(player))
+            {
+                player.sendMessage(ChatColor.AQUA + "[" + ChatColor.RED + "Telnet Chat" + ChatColor.AQUA + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.RED + message);
+            }
+        }
+    }
+    
     public static void SeniorAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
     {
         String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
