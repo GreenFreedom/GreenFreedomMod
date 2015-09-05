@@ -679,6 +679,12 @@ public class TFM_PlayerListener implements Listener
                 event.setCancelled(true);
                 return;
             }
+            if (playerdata.inTelnetAdminChat())
+            {
+                FOPM_TFM_Util.TelnetAdminChatMessage(player, message, false);
+                event.setCancelled(true);
+                return;
+            }
             if (playerdata.inDevChat())
             {
                 FOPM_TFM_Util.DevChatMessage(player, message, false);
