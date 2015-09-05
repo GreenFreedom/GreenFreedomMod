@@ -38,6 +38,7 @@ public class Command_al extends TFM_Command
         sender.sendMessage(ChatColor.GREEN + "The Lead Specialist is reuben4545");
         sender.sendMessage(ChatColor.BLUE + "The Co-Owners are TaahThePenguin and AndySixx");
         sender.sendMessage(ChatColor.BLUE + "The Owners are falceso and DarkGamingDronze");
+        sender.sendMessage(ChatColor.DARK_PURPLE + "Co-Chief Forum Developer: Joenmb");
         return true;
     }
 }
