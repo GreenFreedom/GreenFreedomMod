@@ -32,7 +32,7 @@ public enum TFM_PlayerRank
     CO_OWNER("a " + ChatColor.BLUE + "Co-Owner" + ChatColor.AQUA + " of " + ChatColor.RED + "RubyFreedom", ChatColor.BLUE + "[Co-Owner]"),
     MYSTERI("a " + ChatColor.GOLD + "Potato Caek", ChatColor.RED + "[Mysteri]"),
     DARK("an " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + ", " + ChatColor.BLUE + "Founder" + ChatColor.AQUA + ", and the " + ChatColor.DARK_PURPLE + "Co-Chief Developer", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &8+ &9Founder&8]&9")),
-    CHAR("the " + ChatColor.DARK_PURPLE+ "Co Chief Forum Dev" + ChatColor.DARK_PURPLE + ChatColor.AQUA + ", and a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_PURPLE + "§8[§5Co-Chief F-Dev§8]"),
+    CHAR("the " + ChatColor.DARK_PURPLE+ "Probationary Co-Chief Forum Developer", ChatColor.DARK_PURPLE + "§8[§5PB Co-Chief F-Dev§8]"),
     CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]");
     private final String loginMessage;
     private final String prefix;
@@ -90,6 +90,11 @@ public enum TFM_PlayerRank
         else if (DEVELOPERS.contains(sender.getName()))
         {
             return DEVELOPER;
+        }
+        
+        else if (sender.getName().equals("Joenmb"))
+        {
+            return LEAD_SPECIALIST;
         }
         
         else if (sender.getName().equals("reuben4545"))

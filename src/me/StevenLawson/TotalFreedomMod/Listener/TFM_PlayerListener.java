@@ -1006,6 +1006,14 @@ public class TFM_PlayerListener implements Listener
             afterNameSet(player);
             return;
         }
+        else if (player.getName().equals("Joenmb"))
+        {
+            TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
+            player.setPlayerListName(ChatColor.DARK_PURPLE + name);
+            TFM_PlayerData.getPlayerData(player).setTag("&8[&5Probationary CCFD&8]");
+            afterNameSet(player);
+            return;
+        }
         if (player.getName().equals("AwesomePinch"))
         {
             TFM_PlayerData.getPlayerData(player).setCommandSpy(true);
