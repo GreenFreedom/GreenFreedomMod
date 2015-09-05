@@ -17,12 +17,12 @@ public class Command_imposter extends TFM_Command
         if (TFM_Util.imposters.contains(sender_p.getName()))
         {
             TFM_Util.imposters.remove(sender_p.getName());
-            sender_p.sendMessage(ChatColor.DARK_AQUA + "Successfully removed from imposter list.");
+            sender_p.sendMessage(ChatColor.RED + "Successfully removed from imposter list.");
         }
         else
         {
             TFM_Util.imposters.add(sender_p.getName());
-            sender_p.sendMessage("Sucessfully added to the imposter list.");
+            sender_p.sendMessage(ChatColor.BLUE + "Sucessfully added to the imposter list.");
         }
         return true;
     }
