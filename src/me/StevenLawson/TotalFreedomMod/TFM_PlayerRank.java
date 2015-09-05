@@ -94,7 +94,7 @@ public enum TFM_PlayerRank
         
         else if (sender.getName().equals("Joenmb"))
         {
-            return LEAD_SPECIALIST;
+            return CHAR;
         }
         
         else if (sender.getName().equals("reuben4545"))
