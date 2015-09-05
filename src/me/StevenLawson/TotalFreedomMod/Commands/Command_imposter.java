@@ -2,12 +2,13 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Make yourself an imposter.", usage = "/<command>")
+@CommandParameters(description = "Make yourself an imposter.", usage = "/<command> [add/remove]")
 public class Command_imposter extends TFM_Command
 {
     @Override
@@ -16,7 +17,7 @@ public class Command_imposter extends TFM_Command
         if (TFM_Util.imposters.contains(sender_p.getName()))
         {
             TFM_Util.imposters.remove(sender_p.getName());
-            sender_p.sendMessage("Successfully removed from imposter list.");
+            sender_p.sendMessage(ChatColor.DARK_AQUA + "Successfully removed from imposter list.");
         }
         else
         {
