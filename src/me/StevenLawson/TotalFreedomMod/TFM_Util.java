@@ -996,10 +996,7 @@ public class TFM_Util
                 return (T) field.get(from);
 
             }
-            catch (NoSuchFieldException ex)
-            {
-            }
-            catch (IllegalAccessException ex)
+            catch (NoSuchFieldException | IllegalAccessException ex)
             {
             }
         }

@@ -104,6 +104,7 @@ public class TFM_PlayerData
     private boolean inAdminchat = false;
     private boolean inSeniorAdminchat = false;
     private boolean inDevchat = false;
+    private boolean inTelnetAdminChat = false;
     private boolean allCommandsBlocked = false;
     private boolean verifiedSuperadminId = false;
     private String lastCommand = "";
@@ -500,6 +501,16 @@ public class TFM_PlayerData
     public boolean inSeniorAdminChat()
     {
         return this.inSeniorAdminchat;
+    }
+    
+    public void setTelnetAdminChat(boolean inTelnetAdminChat)
+    {
+        this.inTelnetAdminChat = inTelnetAdminChat;
+    }
+
+    public boolean inTelnetAdminChat()
+    {
+        return this.inTelnetAdminChat;
     }
 
     public void setDevChat(boolean inDevchat)
