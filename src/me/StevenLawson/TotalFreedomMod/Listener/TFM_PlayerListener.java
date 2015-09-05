@@ -1138,31 +1138,12 @@ public class TFM_PlayerListener implements Listener
     {
         TFM_ServerInterface.handlePlayerPreLogin(event);
     }
-
-    public static final List<String> JOENMB = Arrays.asList("108.201.*.*");
-    public static final List<String> joenMb = JOENMB;
-
+    
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerLogin(PlayerLoginEvent event)
     {
         Player player = event.getPlayer();
         String ip = event.getAddress().getHostAddress().trim();
-        // Check for Joen
-        for (String testIp : joenMb)
-        {
-            if (TFM_Util.fuzzyIpMatch(testIp, ip, 4))
-            {
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "You are demoted and permanently banned from this server.");
-                return;
-            }
-        }
-
-        if (player.getName().equals("Joenmb"))
-        {
-            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "You are demoted and permanently banned from this server.");
-            return;
-        }
-
         TFM_ServerInterface.handlePlayerLogin(event);
     }
 
