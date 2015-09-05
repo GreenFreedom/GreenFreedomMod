@@ -75,6 +75,8 @@ public class TFM_PlayerListener implements Listener
     private static final Random RANDOM = new Random();
     public boolean purple = false;
     public boolean black = false;
+    
+    //TODO: Test
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerInteract(PlayerInteractEvent event)
