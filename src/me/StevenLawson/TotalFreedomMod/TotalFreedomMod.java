@@ -166,13 +166,6 @@ public class TotalFreedomMod extends JavaPlugin
                 world.setWeatherDuration(0);
             }
         }
-        
-        if (!Bukkit.getPluginManager().isPluginEnabled("RubyFreedomTelnet"))
-        {
-            TFM_Log.severe("Changes were detected in the telnet client that are not allowed. Disabling.");
-            Plugin telnet = Bukkit.getPluginManager().getPlugin("BukkitTelnet");
-            Bukkit.getPluginManager().disablePlugin(telnet);
-        }
 
         // Heartbeat
         new TFM_Heartbeat(plugin).runTaskTimer(plugin, HEARTBEAT_RATE * 20L, HEARTBEAT_RATE * 20L);
