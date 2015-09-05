@@ -20,7 +20,7 @@ public class TFM_VoteListener implements Listener
     {
         Vote vote = event.getVote();
         Player player = Bukkit.getPlayer(vote.getUsername());
-        Bukkit.broadcastMessage(player.getName() + " has voted on " + vote.getServiceName() + " and have received a goodie basket!");
+        Bukkit.broadcastMessage(FOPM_TFM_Util.randomChatColour() + player.getName() + " has voted on " + vote.getServiceName() + " and have received a goodie basket!");
         Inventory inv = player.getInventory();
         ItemStack cookie = new ItemStack(Material.COOKIE, 1);
         ItemStack cake = new ItemStack(Material.CAKE, 1);
