@@ -2,7 +2,7 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 
 public enum AdminLevel
 {
-    ALL("All Player Commands"), OP("OP Commands"), DONATOR("Donator Commands"), DONATORP("Donator+ Commands"), SUPER("SuperAdmin Commands"), SENIOR("Senior Admin Commands");
+    ALL("All Player Commands"), OP("OP Commands"), DONATOR("Donator Commands"), DONATORP("Donator+ Commands"), SUPER("SuperAdmin Commands"), SENIOR("Senior Admin Commands"), OWNER("Owner Commands");
     //
     private final String friendlyName;
 
