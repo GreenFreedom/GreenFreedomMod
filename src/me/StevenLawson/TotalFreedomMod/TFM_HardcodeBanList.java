@@ -18,14 +18,9 @@ public class TFM_HardcodeBanList
             "wiki_2",
             "DamnImCool",
             "hiram2238",
-            "Charlotte474747",
-            "Jacob474747",
-            "_Kaylee42",
-            "AliZorHD",
-            "AliZor"
-    //Definitely not andysixx permbanning his brother.
-
-    );
+            "Joenmb",
+            "Charlotte474747"
+            );
     public static final List<String> HARDCODE_IPS = Arrays.asList(
             "77.98.*.*",
             "77.64.*.*",
@@ -38,6 +33,10 @@ public class TFM_HardcodeBanList
             "24.188.*.*",
             "58.179.*.*"
     );
-    public static final List<String> SUSPENDED_ADMINS = Arrays.asList();
-    public static final List<String> SUSPENDED_ADMINS_REASON = Arrays.asList();
+    public static final List<String> SUSPENDED_ADMINS = Arrays.asList(
+            "Joenmb"
+    );
+    public static final List<String> SUSPENDED_ADMINS_REASON = Arrays.asList(
+            "You are suspended for rougitity"
+    );
 }
