@@ -19,12 +19,12 @@ public class Command_busy extends TFM_Command
         {
         if (args[0].equals("on"))
         {
-        TFM_Util.adminAction(ChatColor.RED + sender.getName(), "I'm currently busy, please conatact another admin.", false);
+        TFM_Util.adminAction(ChatColor.RED + sender.getName(), "I'm currently busy, please contact another admin.", false);
         return true;
         }
         else if (args[0].equals("off"))
         {
-      TFM_Util.adminAction(ChatColor.AQUA + sender.getName(), "I'm not busy anymore, you can conatact me now.", false);
+      TFM_Util.adminAction(ChatColor.AQUA + sender.getName(), "I'm not busy anymore, you can contact me now.", false);
       return true;
         }
         }
