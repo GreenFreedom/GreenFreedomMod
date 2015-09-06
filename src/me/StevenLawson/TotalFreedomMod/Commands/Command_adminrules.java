@@ -22,7 +22,7 @@ public class Command_adminrules extends TFM_Command
         playerMsg(ChatColor.RED + "§1[8]§c Don't try to boss the founder or developers around! DONT try to boss anyone around!");
         playerMsg(ChatColor.RED + "§1[9]§c Don't Gtfo, kick, ect with that admins permissions!");
         playerMsg(ChatColor.DARK_RED + "§1[10]§c Do NOT spam or abuse!");
-        playerMsg(ChatColor.RED + "Only DarkGamingDronze, falceso, DarkHorse108 can accept/deny applications!");
+        playerMsg(ChatColor.RED + "Only DarkGamingDronze, falceso, DarkHorse108 and AndySixx can accept/deny applications!");
         playerMsg(ChatColor.RED + "A SrA can not reject an Executive/Sys/Specialist!");
         playerMsg(ChatColor.DARK_RED + "Rules 3, and 9 do not apply to founders, Chief Dev!");
         playerMsg(ChatColor.DARK_RED + "§1[11]§c DONT TELL THE FOUNDER OR PLUGIN DEVS WHAT TO DO!");
