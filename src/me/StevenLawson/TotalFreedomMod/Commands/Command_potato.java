@@ -40,7 +40,7 @@ public class Command_potato extends TFM_Command
 
         ItemStack heldItem = new ItemStack(Material.POTATO_ITEM);
         ItemMeta heldItemMeta = heldItem.getItemMeta();
-        if(sender.getName().equals("tylerhyperHD"))
+        if (sender.getName().equals("tylerhyperHD"))
         {
             heldItemMeta.setDisplayName((new StringBuilder()).append(ChatColor.WHITE).append("Tyler's Special").append(ChatColor.GRAY).append(" Potato").toString());
         }

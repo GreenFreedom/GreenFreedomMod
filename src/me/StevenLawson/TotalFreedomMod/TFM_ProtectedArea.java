@@ -231,7 +231,10 @@ public class TFM_ProtectedArea
         }
     }
 
-    @SuppressWarnings({"unchecked", "ConvertToTryWithResources", "UseSpecificCatch"})
+    @SuppressWarnings(
+            {
+                "unchecked", "ConvertToTryWithResources", "UseSpecificCatch"
+            })
     public static void load()
     {
         if (!TFM_ConfigEntry.PROTECTAREA_ENABLED.getBoolean())

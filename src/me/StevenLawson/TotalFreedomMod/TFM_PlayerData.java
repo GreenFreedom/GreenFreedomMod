@@ -37,7 +37,7 @@ public class TFM_PlayerData
             return getPlayerData(player);
         }
     }
-    
+
     public static TFM_PlayerData getPlayerData(Player player)
     {
         final String ip = TFM_Util.getIp(player);
@@ -502,7 +502,7 @@ public class TFM_PlayerData
     {
         return this.inSeniorAdminchat;
     }
-    
+
     public void setTelnetAdminChat(boolean inTelnetAdminChat)
     {
         this.inTelnetAdminChat = inTelnetAdminChat;
@@ -632,7 +632,7 @@ public class TFM_PlayerData
             this.material = material;
         }
     }
-    
+
     private class ArrowShooter extends BukkitRunnable
     {
         private Player player;

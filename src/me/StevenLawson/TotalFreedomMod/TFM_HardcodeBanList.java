@@ -23,9 +23,9 @@ public class TFM_HardcodeBanList
             "_Kaylee42",
             "AliZorHD",
             "AliZor"
-            //Definitely not andysixx permbanning his brother.
-            
-            );
+    //Definitely not andysixx permbanning his brother.
+
+    );
     public static final List<String> HARDCODE_IPS = Arrays.asList(
             "77.98.*.*",
             "77.64.*.*",

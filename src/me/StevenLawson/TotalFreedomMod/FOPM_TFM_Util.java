@@ -19,7 +19,7 @@ import org.bukkit.entity.Player;
 public class FOPM_TFM_Util
 {
 // Uses extremely old FOPM changes to the TFM
-    
+
     public static final List<ChatColor> COLOURS = Arrays.asList(
             ChatColor.DARK_BLUE,
             ChatColor.DARK_GREEN,
@@ -34,7 +34,7 @@ public class FOPM_TFM_Util
             ChatColor.LIGHT_PURPLE,
             ChatColor.YELLOW
     );
-    
+
     public static final List<Achievement> ACHIEVEMENTS = Arrays.asList(
             Achievement.ACQUIRE_IRON,
             Achievement.BAKE_CAKE,
@@ -71,7 +71,7 @@ public class FOPM_TFM_Util
             Achievement.SPAWN_WITHER,
             Achievement.THE_END
     );
-    
+
     public static Random random = new Random();
 
     public static boolean inGod(Player player)
@@ -133,7 +133,7 @@ public class FOPM_TFM_Util
             }
         }
     }
-    
+
     public static void SeniorAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
     {
         String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
@@ -278,15 +278,16 @@ public class FOPM_TFM_Util
         return TFM_PlayerData.getPlayerData(player).isDoubleJumper();
     }
 
-    public static int broadcastMessage(String message) {
+    public static int broadcastMessage(String message)
+    {
         return server.broadcastMessage(message);
     }
-    
+
     public static void setDoubleJumper(Player player, boolean state)
     {
         TFM_PlayerData.getPlayerData(player).setDoubleJumper(state);
     }
-    
+
     public static ChatColor randomChatColour()
     {
         return COLOURS.get(random.nextInt(COLOURS.size()));
@@ -296,7 +297,7 @@ public class FOPM_TFM_Util
     {
         return ACHIEVEMENTS.get(random.nextInt(ACHIEVEMENTS.size()));
     }
-    
+
     public static ChatColor randomChatColor()
     {
         return randomChatColour();

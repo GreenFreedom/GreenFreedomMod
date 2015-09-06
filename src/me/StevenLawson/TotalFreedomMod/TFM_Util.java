@@ -688,9 +688,9 @@ public class TFM_Util
     }
 
     @SuppressWarnings(
-    {
-        "unchecked", "UseSpecificCatch", "ConvertToTryWithResources"
-    })
+            {
+                "unchecked", "UseSpecificCatch", "ConvertToTryWithResources"
+            })
     public static Map<String, Boolean> getSavedFlags()
     {
         Map<String, Boolean> flags = null;

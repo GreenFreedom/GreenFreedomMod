@@ -33,7 +33,7 @@ public class Command_p extends TFM_Command
             {
                 userinfo.setDevChat(!userinfo.inDevChat());
             }
-            
+
             if (userinfo.inTelnetAdminChat())
             {
                 userinfo.setTelnetAdminChat(!userinfo.inTelnetAdminChat());

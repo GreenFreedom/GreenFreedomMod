@@ -75,9 +75,8 @@ public class TFM_PlayerListener implements Listener
     private static final Random RANDOM = new Random();
     public boolean purple = false;
     public boolean black = false;
-    
-    //TODO: Test
 
+    //TODO: Test
     @EventHandler(priority = EventPriority.HIGH)
     public void onPlayerInteract(PlayerInteractEvent event)
     {
@@ -786,7 +785,7 @@ public class TFM_PlayerListener implements Listener
             // CommandBlocker handles messages and broadcasts
             event.setCancelled(true);
         }
-        
+
         if (command.contains("purple"))
         {
             purple = true;
@@ -1148,7 +1147,7 @@ public class TFM_PlayerListener implements Listener
     {
         TFM_ServerInterface.handlePlayerPreLogin(event);
     }
-    
+
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerLogin(PlayerLoginEvent event)
     {

@@ -52,7 +52,7 @@ public class Command_purple extends TFM_Command
                 ItemStack CamChest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
                 ItemStack CamLegs = new ItemStack(Material.LEATHER_LEGGINGS, 1);
                 ItemStack CamBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
-                
+
                 for (Enchantment ench : Enchantment.values())
                 {
                     if (ench.equals(Enchantment.LOOT_BONUS_MOBS) || ench.equals(Enchantment.LOOT_BONUS_BLOCKS))

@@ -36,7 +36,7 @@ public class Command_opitems extends TFM_Command
             bow.addUnsafeEnchantment(ench, 32767);
             arrow.addUnsafeEnchantment(ench, 32767);
         }
-        
+
         if (inv.contains(bow))
         {
         }
@@ -44,7 +44,7 @@ public class Command_opitems extends TFM_Command
         {
             inv.addItem(bow);
         }
-        
+
         if (inv.contains(arrow))
         {
         }
@@ -52,7 +52,7 @@ public class Command_opitems extends TFM_Command
         {
             inv.addItem(arrow);
         }
-        
+
         if (inv.contains(sword))
         {
         }

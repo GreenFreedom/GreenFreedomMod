@@ -41,12 +41,12 @@ public class Command_devchat extends TFM_Command
             {
                 userinfo.setSeniorAdminChat(!userinfo.inSeniorAdminChat());
             }
-            
+
             if (userinfo.inTelnetAdminChat())
             {
                 userinfo.setTelnetAdminChat(!userinfo.inTelnetAdminChat());
             }
-            
+
             userinfo.setDevChat(!userinfo.inDevChat());
             playerMsg("Toggled Dev Chat " + (userinfo.inDevChat() ? "on" : "off") + ".");
         }

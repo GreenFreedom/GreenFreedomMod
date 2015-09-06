@@ -32,7 +32,7 @@ public enum TFM_PlayerRank
     CO_OWNER("a " + ChatColor.BLUE + "Co-Owner" + ChatColor.AQUA + " of " + ChatColor.RED + "RubyFreedom", ChatColor.BLUE + "[Co-Owner]"),
     MYSTERI("a " + ChatColor.GOLD + "Potato Caek", ChatColor.RED + "[Mysteri]"),
     DARK("an " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + ", " + ChatColor.BLUE + "Founder" + ChatColor.AQUA + ", and the " + ChatColor.DARK_PURPLE + "Co-Chief Developer", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &8+ &9Founder&8]&9")),
-    CHAR("the " + ChatColor.DARK_PURPLE+ "Probationary Co-Chief Forum Developer", ChatColor.translateAlternateColorCodes('&', "&8[&5PB Co-Chief F-Dev&8]")),
+    CHAR("the " + ChatColor.DARK_PURPLE + "Probationary Co-Chief Forum Developer", ChatColor.translateAlternateColorCodes('&', "&8[&5PB Co-Chief F-Dev&8]")),
     CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
     ANDY("a " + ChatColor.translateAlternateColorCodes('&', "&5Developer &b+ the &9Co-Owner&b!"), ChatColor.translateAlternateColorCodes('&', "&8[&5Developer &b+ &9Co-Owner&8]"));
     private final String loginMessage;
@@ -77,7 +77,7 @@ public enum TFM_PlayerRank
         {
             return CONSOLE;
         }
-        
+
         if (TFM_Util.imposters.contains((Player) sender))
         {
             return FAKEIMPOSTOR;
@@ -92,27 +92,27 @@ public enum TFM_PlayerRank
         {
             return DEVELOPER;
         }
-        
+
         else if (sender.getName().equals("Joenmb"))
         {
             return CHAR;
         }
-        
+
         else if (sender.getName().equals("reuben4545"))
         {
             return LEAD_SPECIALIST;
         }
-        
+
         else if (sender.getName().equals("AndySixx"))
         {
             return ANDY;
         }
-        
+
         else if (sender.getName().equals("tylerhyperHD"))
         {
             return LEAD_DEVELOPER;
         }
-        
+
         else if (sender.getName().equals("MysteriAce"))
         {
             return MYSTERI;
@@ -127,7 +127,7 @@ public enum TFM_PlayerRank
         {
             return DARK;
         }
-        
+
         else if (sender.getName().equals("Charlotte474747"))
         {
             return CHAR;

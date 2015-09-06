@@ -48,7 +48,7 @@ public class Command_black extends TFM_Command
                     world.strikeLightningEffect(loc);
                 }
                 PlayerInventory inv = player.getInventory();
-                
+
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 3, 255));
                 ItemStack CamWool = new ItemStack(Material.WOOL, 1, (short) 15);
                 ItemStack CamBow = new ItemStack(Material.BOW, 1);
@@ -57,7 +57,7 @@ public class Command_black extends TFM_Command
                 ItemStack CamChest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
                 ItemStack CamLegs = new ItemStack(Material.LEATHER_LEGGINGS, 1);
                 ItemStack CamBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
-                
+
                 for (Enchantment ench : Enchantment.values())
                 {
                     if (ench.equals(Enchantment.LOOT_BONUS_MOBS) || ench.equals(Enchantment.LOOT_BONUS_BLOCKS))

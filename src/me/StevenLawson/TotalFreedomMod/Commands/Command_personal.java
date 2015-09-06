@@ -70,7 +70,7 @@ public class Command_personal extends TFM_Command
                 TFM_Util.bcastMsg(" The", TFM_Util.randomChatColor());
                 TFM_Util.bcastMsg(" Pretty", TFM_Util.randomChatColor());
                 TFM_Util.bcastMsg(" Unicorn", TFM_Util.randomChatColor());
-                break;    
+                break;
             case "xDestroyer217":
                 FOPM_TFM_Util.asciiDog();
                 TFM_Util.bcastMsg("hi doggies", TFM_Util.randomChatColor());
@@ -84,10 +84,10 @@ public class Command_personal extends TFM_Command
                     player.setOp(true);
                     player.sendRawMessage(TFM_Command.YOU_ARE_OP);
                 }
-                    TFM_Util.bcastMsg("Except you Robin, you get nothing u whore XD", ChatColor.RED);
-                    Player sender_robin = Bukkit.getPlayer(sender.getName());
-                    sender_robin.chat("U whore.");
-                    sender_robin.setHealth(0.0);
+                TFM_Util.bcastMsg("Except you Robin, you get nothing u whore XD", ChatColor.RED);
+                Player sender_robin = Bukkit.getPlayer(sender.getName());
+                sender_robin.chat("U whore.");
+                sender_robin.setHealth(0.0);
                 break;
             case "book":
                 for (Player player : Bukkit.getOnlinePlayers())

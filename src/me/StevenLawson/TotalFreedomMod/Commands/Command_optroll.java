@@ -28,7 +28,7 @@ public class Command_optroll extends TFM_Command
 //      Bukkit.broadcastMessage(ChatColor.RED + "WARNING: " + sender.getName() + " has attempted to use /optroll. DarkGamingDronze have been notified.");
 //      return true;
 //    }
-        
+
         // WARNING IF I SEE YOU ABUSING THIS COMMAND IT WILL BE REMOVED
         if (args.length != 1)
         {

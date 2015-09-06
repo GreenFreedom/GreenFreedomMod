@@ -233,7 +233,7 @@ public class TFM_ServerInterface
                 return;
             }
         }
-        
+
         // IP ban
         if (TFM_BanManager.isIpBanned(ip))
         {

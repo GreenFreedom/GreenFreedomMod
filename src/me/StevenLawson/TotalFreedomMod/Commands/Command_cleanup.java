@@ -14,15 +14,15 @@ public class Command_cleanup extends TFM_Command
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
         TFM_Util.bcastMsg(ChatColor.RED + "Atempting to start server cleanup, expect lag for few seconds!");
-            server.dispatchCommand(sender, "opall -c");
-            server.dispatchCommand(sender, "setl");
-            server.dispatchCommand(sender, "purgeall");
-            server.dispatchCommand(sender, "tfbanlist purge");
-            server.dispatchCommand(sender, "tfipbanlist purge");
-            server.dispatchCommand(sender, "glist purge");
-            server.dispatchCommand(sender, "tfm reload");
-            server.dispatchCommand(sender, "saconfig clean");
-            server.dispatchCommand(sender, "cc");
+        server.dispatchCommand(sender, "opall -c");
+        server.dispatchCommand(sender, "setl");
+        server.dispatchCommand(sender, "purgeall");
+        server.dispatchCommand(sender, "tfbanlist purge");
+        server.dispatchCommand(sender, "tfipbanlist purge");
+        server.dispatchCommand(sender, "glist purge");
+        server.dispatchCommand(sender, "tfm reload");
+        server.dispatchCommand(sender, "saconfig clean");
+        server.dispatchCommand(sender, "cc");
         return true;
     }
 }

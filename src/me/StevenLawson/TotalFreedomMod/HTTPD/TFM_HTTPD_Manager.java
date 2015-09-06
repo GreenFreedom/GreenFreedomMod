@@ -161,7 +161,10 @@ public class TFM_HTTPD_Manager
                 this.name = name;
             }
 
-            @SuppressWarnings({"Convert2Lambda", "UseSpecificCatch"})
+            @SuppressWarnings(
+                    {
+                        "Convert2Lambda", "UseSpecificCatch"
+                    })
             public Response execute(final HTTPSession session)
             {
                 try
