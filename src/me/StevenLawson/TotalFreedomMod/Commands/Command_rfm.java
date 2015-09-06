@@ -41,10 +41,9 @@ public class Command_rfm extends TFM_Command
             TFM_BanManager.load();
             TFM_CommandBlocker.load();
 
-            final String message = String.format("RubyFreedomMod v" + plugin.getDescription().getVersion() + "reloaded.",
+            final String message = String.format("%s v%s reloaded.",
                     TotalFreedomMod.pluginName,
-                    TotalFreedomMod.pluginVersion,
-                    TotalFreedomMod.buildNumber);
+                    TotalFreedomMod.pluginVersion);
 
             playerMsg(message);
             TFM_Log.info(message);
