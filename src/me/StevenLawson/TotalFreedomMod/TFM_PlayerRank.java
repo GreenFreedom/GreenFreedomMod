@@ -24,7 +24,7 @@ public enum TFM_PlayerRank
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
-    OWNER("the " + ChatColor.DARK_RED + "§4Owner §band §9Founder §bof §cRubyFreedom§b. ", ChatColor.DARK_RED + "§8[§4Owner §9+ §9Founder§8]§9"),
+    OWNER("the " + ChatColor.BLUE + "Owner " + ChatColor.AQUA + "and" + ChatColor.BLUE + " Founder " + ChatColor.AQUA + "of " + ChatColor.RED + "RubyFreedom", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &9+ &9Founder&8]&9")),
     SYS_ADMIN("a " + ChatColor.DARK_RED + "System-Admin", ChatColor.DARK_RED + "[Sys-Admin]"),
     HORSE("a " + ChatColor.DARK_RED + "System-Admin" + ChatColor.AQUA + " and the " + ChatColor.RED + "Admin Manager", ChatColor.DARK_RED + "[Sys-Admin + Admin MGR]"),
     LEAD_DEVELOPER("the " + ChatColor.DARK_PURPLE + "Lead Developer" + ChatColor.AQUA + " of " + ChatColor.RED + "RubyFreedom", ChatColor.DARK_PURPLE + "[L-Dev]"),
@@ -32,9 +32,9 @@ public enum TFM_PlayerRank
     CO_OWNER("a " + ChatColor.BLUE + "Co-Owner" + ChatColor.AQUA + " of " + ChatColor.RED + "RubyFreedom", ChatColor.BLUE + "[Co-Owner]"),
     MYSTERI("a " + ChatColor.GOLD + "Potato Caek", ChatColor.RED + "[Mysteri]"),
     DARK("an " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + ", " + ChatColor.BLUE + "Founder" + ChatColor.AQUA + ", and the " + ChatColor.DARK_PURPLE + "Co-Chief Developer", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &8+ &9Founder&8]&9")),
-    CHAR("the " + ChatColor.DARK_PURPLE+ "Probationary Co-Chief Forum Developer", ChatColor.DARK_PURPLE + "§8[§5PB Co-Chief F-Dev§8]"),
+    CHAR("the " + ChatColor.DARK_PURPLE+ "Probationary Co-Chief Forum Developer", ChatColor.translateAlternateColorCodes('&', "&8[&5PB Co-Chief F-Dev&8]")),
     CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
-    ANDY("a " + ChatColor.DARK_PURPLE + "§5Developer §b+ the §9Co-Owner§b!", ChatColor.DARK_PURPLE + "§8[§5Developer §b+ §9Co-Owner]");
+    ANDY("a " + ChatColor.translateAlternateColorCodes('&', "&5Developer &b+ the &9Co-Owner&b!"), ChatColor.translateAlternateColorCodes('&', "&8[&5Developer &b+ &9Co-Owner&8]"));
     private final String loginMessage;
     private final String prefix;
 
