@@ -43,14 +43,18 @@ public class TFM_AdminList
         seniorUUIDs = new HashSet<UUID>();
         seniorConsoleNames = new HashSet<String>();
         superIps = new HashSet<String>();
-
+        
         SUPERADMIN_SERVICE = new Function<Player, Boolean>()
         {
-
             @Override
             public Boolean apply(Player f)
             {
                 return isSuperAdmin(f);
+            }
+            
+            public Boolean inTraining()
+            {
+                return TFM_ConfigEntry.ADMIN_ONLY_MODE.getBoolean();
             }
         };
     }
