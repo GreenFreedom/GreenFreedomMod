@@ -59,7 +59,7 @@ public class Command_abusiveday extends TFM_Command
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(true);
             TFM_Util.adminAction(sender.getName(), "Starting the abusive day...", ChatColor.RED);
             TFM_Util.bcastMsg("*****************************************************", ChatColor.RED);
-            TFM_Util.bcastMsg("* WARNING: RubyFreedom Will start Abusvie Day!      *", ChatColor.RED);
+            TFM_Util.bcastMsg("* WARNING: RubyFreedom Will start Abusive Day!      *", ChatColor.RED);
             TFM_Util.bcastMsg("* This might result in unexpected behaviour...      *", ChatColor.RED);
             TFM_Util.bcastMsg("* - - - - - - - - - - - - - - - - - - - - - - - - - *", ChatColor.RED);
             TFM_Util.bcastMsg("* Admins Now can abuse thier powers only in-game!!  *", ChatColor.RED);
