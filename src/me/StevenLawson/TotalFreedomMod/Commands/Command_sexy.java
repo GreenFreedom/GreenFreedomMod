@@ -9,13 +9,6 @@ import org.bukkit.entity.Player;
 @CommandParameters(description = "DarkGamingDronze is totally sexy!", usage = "/<command>")
 public class Command_sexy extends TFM_Command
 {
-// *********************************
-// * A msg from the RFM Developers *
-// * You may NOT Copy any Commands *
-// * From the RFM, Any Commands    *
-// * Found Copied, Your server will*
-// * be infront of a DCMA threat.  *
-// *********************************   
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {

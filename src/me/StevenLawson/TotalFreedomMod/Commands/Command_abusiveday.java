@@ -2,25 +2,16 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
-import me.StevenLawson.TotalFreedomMod.TFM_Log;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
+@CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Start a abusive day", usage = "/<command> [on | off]", aliases = "tm")
 public class Command_abusiveday extends TFM_Command
 {
-// *********************************
-// * A msg from the RFM Developers *
-// * You may NOT Copy any Commands *
-// * From the RFM, Any Commands    *
-// * Found Copied, Your server will*
-// * be infront of a DCMA threat.  *
-// *********************************   
-
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
