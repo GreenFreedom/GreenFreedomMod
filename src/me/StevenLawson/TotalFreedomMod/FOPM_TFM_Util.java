@@ -8,7 +8,6 @@ import static me.StevenLawson.TotalFreedomMod.TFM_Util.COOWNER;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.RF_DEVELOPERS;
 import static me.StevenLawson.TotalFreedomMod.TFM_Util.SPECIALISTS;
 import static me.StevenLawson.TotalFreedomMod.TotalFreedomMod.server;
-import org.bukkit.Achievement;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Sound;
@@ -19,7 +18,7 @@ import org.bukkit.entity.Player;
 public class FOPM_TFM_Util
 {
 // Uses extremely old FOPM changes to the TFM
-
+    
     public static final List<ChatColor> COLOURS = Arrays.asList(
             ChatColor.DARK_BLUE,
             ChatColor.DARK_GREEN,
@@ -34,44 +33,7 @@ public class FOPM_TFM_Util
             ChatColor.LIGHT_PURPLE,
             ChatColor.YELLOW
     );
-
-    public static final List<Achievement> ACHIEVEMENTS = Arrays.asList(
-            Achievement.ACQUIRE_IRON,
-            Achievement.BAKE_CAKE,
-            Achievement.BOOKCASE,
-            Achievement.BREED_COW,
-            Achievement.BREW_POTION,
-            Achievement.BUILD_BETTER_PICKAXE,
-            Achievement.BUILD_FURNACE,
-            Achievement.BUILD_HOE,
-            Achievement.BUILD_PICKAXE,
-            Achievement.BUILD_SWORD,
-            Achievement.BUILD_WORKBENCH,
-            Achievement.COOK_FISH,
-            Achievement.DIAMONDS_TO_YOU,
-            Achievement.ENCHANTMENTS,
-            Achievement.END_PORTAL,
-            Achievement.EXPLORE_ALL_BIOMES,
-            Achievement.FLY_PIG,
-            Achievement.FULL_BEACON,
-            Achievement.GET_BLAZE_ROD,
-            Achievement.GET_DIAMONDS,
-            Achievement.GHAST_RETURN,
-            Achievement.KILL_COW,
-            Achievement.KILL_ENEMY,
-            Achievement.KILL_WITHER,
-            Achievement.MAKE_BREAD,
-            Achievement.MINE_WOOD,
-            Achievement.NETHER_PORTAL,
-            Achievement.ON_A_RAIL,
-            Achievement.OPEN_INVENTORY,
-            Achievement.OVERKILL,
-            Achievement.OVERPOWERED,
-            Achievement.SNIPE_SKELETON,
-            Achievement.SPAWN_WITHER,
-            Achievement.THE_END
-    );
-
+    
     public static Random random = new Random();
 
     public static boolean inGod(Player player)
@@ -123,17 +85,30 @@ public class FOPM_TFM_Util
     public static void TelnetAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
     {
         String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
-        TFM_Log.info("[Telnet Admin Chat] " + name + ": " + message);
+        TFM_Log.info("[Telnet-Admin] " + name + ": " + message);
 
         for (Player player : Bukkit.getOnlinePlayers())
         {
             if (TFM_AdminList.isTelnetAdmin(player))
             {
-                player.sendMessage(ChatColor.GRAY + "[" + ChatColor.DARK_GREEN + "Telnet Chat" + ChatColor.GRAY + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.RED + message);
+                player.sendMessage(ChatColor.AQUA + "[" + ChatColor.RED + "Telnet Chat" + ChatColor.AQUA + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.RED + message);
             }
         }
     }
+    public static void OwnerChatMessage(CommandSender sender, String message, boolean senderIsConsole)
+    {
+        String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
+        TFM_Log.info("[Owner] " + name + ": " + message);
 
+        for (Player player : Bukkit.getOnlinePlayers())
+        {
+            if (TFM_AdminList.isTelnetAdmin(player))
+            {
+                player.sendMessage(ChatColor.AQUA + "[" + ChatColor.RED + "Owner Chat" + ChatColor.AQUA + "] " + ChatColor.DARK_RED + name + ": " + ChatColor.RED + message);
+            }
+        }
+    }
+    
     public static void SeniorAdminChatMessage(CommandSender sender, String message, boolean senderIsConsole)
     {
         String name = sender.getName() + " " + TFM_PlayerRank.fromSender(sender).getPrefix() + ChatColor.WHITE;
@@ -278,24 +253,18 @@ public class FOPM_TFM_Util
         return TFM_PlayerData.getPlayerData(player).isDoubleJumper();
     }
 
-    public static int broadcastMessage(String message)
-    {
+    public static int broadcastMessage(String message) {
         return server.broadcastMessage(message);
     }
-
+    
     public static void setDoubleJumper(Player player, boolean state)
     {
         TFM_PlayerData.getPlayerData(player).setDoubleJumper(state);
     }
-
+    
     public static ChatColor randomChatColour()
     {
         return COLOURS.get(random.nextInt(COLOURS.size()));
-    }
-
-    public static Achievement randomAchievement()
-    {
-        return ACHIEVEMENTS.get(random.nextInt(ACHIEVEMENTS.size()));
     }
 
     public static ChatColor randomChatColor()
