@@ -1,9 +1,7 @@
 package me.StevenLawson.TotalFreedomMod.Commands;
 
-import java.util.logging.Logger;
 import me.StevenLawson.BukkitTelnet.TelnetLogger;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
-import me.StevenLawson.TotalFreedomMod.TFM_Log;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
