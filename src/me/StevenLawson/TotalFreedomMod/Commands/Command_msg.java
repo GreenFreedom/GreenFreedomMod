@@ -7,12 +7,14 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
-@CommandParameters(description = "Message a player. This is to fix a glitch in Essentials.", usage = "/<command> <player> <message>", aliases = "message")
+@CommandParameters(description = "Message a player. This is to fix a glitch in Essentials.", usage = "/<command> <player> <message>", aliases = "w,m,t,pm,emsg,epm,tell,etell,whisper,ewhisper,message")
 public class Command_msg extends TFM_Command
 {
+    public static Player sendme;
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
+        final Player sendme = sender_p;
         if (args.length == 0)
         {
             return false;
@@ -30,6 +32,7 @@ public class Command_msg extends TFM_Command
             }
             String message = StringUtils.join(args[1], " ");
             
+            sender.sendMessage(ChatColor.RED + "Your message has been sent: " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', message));
             player.sendMessage(ChatColor.DARK_GRAY + "[" + ChatColor.RED + sender.getName() + ChatColor.GREEN + " --> " + ChatColor.GOLD + "me" + ChatColor.DARK_GRAY + "] " + ChatColor.WHITE + ChatColor.translateAlternateColorCodes('&', message));
         }
         return true;
