@@ -10,11 +10,9 @@ import org.bukkit.entity.Player;
 @CommandParameters(description = "Message a player. This is to fix a glitch in Essentials.", usage = "/<command> <player> <message>", aliases = "w,m,t,pm,emsg,epm,tell,etell,whisper,ewhisper,message")
 public class Command_msg extends TFM_Command
 {
-    public static Player sendme;
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        final Player sendme = sender_p;
         if (args.length == 0)
         {
             return false;
