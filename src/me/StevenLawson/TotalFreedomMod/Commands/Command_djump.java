@@ -21,8 +21,7 @@ public class Command_djump extends TFM_Command
         }
         if (args.length == 1 && TFM_AdminList.isSuperAdmin(sender))
         {
-            Player player = null;
-            player = getPlayer(args[0]);
+            Player player = getPlayer(args[0]);
             if (player == null)
             {
                 TFM_Util.playerMsg(sender, TFM_Command.PLAYER_NOT_FOUND);

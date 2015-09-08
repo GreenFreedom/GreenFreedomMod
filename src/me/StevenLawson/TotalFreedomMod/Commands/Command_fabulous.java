@@ -20,14 +20,13 @@ public class Command_fabulous extends TFM_Command
         }
         if (args.length == 1)
         {
-            if (args[0].equals("is"))
+            if (args[0].equalsIgnoreCase("is"))
             {
                 TFM_Util.adminAction(ChatColor.GOLD + "WARNING: " + sender.getName(), "is now fabulous.", false);
                 sender_p.chat(ChatColor.RED + " FABULOUSSSSSSSSS!");
                 return true;
             }
-
-            else if (args[0].equals("not"))
+            else if (args[0].equalsIgnoreCase("not"))
             {
                 sender_p.chat(ChatColor.DARK_RED + "F**k me I am not fabulousssss");
                 TFM_Util.adminAction(ChatColor.GREEN + "WARNING: " + sender.getName(), "has become unfabulous. F**k them.", false);

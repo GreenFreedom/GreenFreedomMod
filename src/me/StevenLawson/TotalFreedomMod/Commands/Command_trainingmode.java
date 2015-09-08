@@ -3,6 +3,7 @@ package me.StevenLawson.TotalFreedomMod.Commands;
 import me.StevenLawson.TotalFreedomMod.Config.TFM_ConfigEntry;
 import me.StevenLawson.TotalFreedomMod.TFM_AdminList;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -19,19 +20,11 @@ public class Command_trainingmode extends TFM_Command
         {
             return false;
         }
-
-        if (args[0].equalsIgnoreCase("off -s"))
-        {
-            TFM_ConfigEntry.TRAINING_SESSION.setBoolean(false);
-            TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(false);
-            TFM_ConfigEntry.TRAINING_SESSION.setBoolean(false);
-            return true;
-        }
-
+        
+        // Whoever coded this is a stupid head. It runs in the listeners u fuck
+        
         if (args[0].equalsIgnoreCase("off"))
         {
-            TFM_ConfigEntry.TRAINING_SESSION.setBoolean(false);
-            TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(false);
             TFM_ConfigEntry.TRAINING_SESSION.setBoolean(false);
             TFM_Util.adminAction(sender.getName(), "Stopping the training mode session...", true);
             return true;
@@ -39,10 +32,8 @@ public class Command_trainingmode extends TFM_Command
         else if (args[0].equalsIgnoreCase("on"))
         {
             TFM_ConfigEntry.TRAINING_SESSION.setBoolean(true);
-            TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(true);
-            TFM_ConfigEntry.TRAINING_SESSION.setBoolean(true);
             TFM_Util.adminAction(sender.getName(), "Starting the training mode session...", true);
-            for (Player player : server.getOnlinePlayers())
+            for (Player player : Bukkit.getOnlinePlayers())
             {
                 if (!TFM_AdminList.isSuperAdmin(player))
                 {

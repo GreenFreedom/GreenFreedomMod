@@ -29,6 +29,7 @@ public class TFM_VoteListener implements Listener
         cake.setItemMeta(cakeItemMeta);
         inv.addItem(cookie);
         inv.addItem(cake);
+        Bukkit.dispatchCommand(player, "opitems");
         for (int i = 0; i <= 100; i++)
         {
             player.awardAchievement(FOPM_TFM_Util.randomAchievement());

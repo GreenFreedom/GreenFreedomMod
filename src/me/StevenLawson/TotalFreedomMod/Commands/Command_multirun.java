@@ -18,7 +18,7 @@ public class Command_multirun extends TFM_Command
     {
         if (!TFM_AdminList.isTelnetAdmin(sender))
         {
-            playerMsg(TFM_Command.MSG_NO_PERMS, ChatColor.RED);
+            sender.sendMessage(ChatColor.RED + TFM_Command.MSG_NO_PERMS);
             return true;
         }
         if (args.length < 2)
