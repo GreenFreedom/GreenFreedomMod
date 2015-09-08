@@ -17,8 +17,6 @@ server:
   # Every word in the MOTD will be a different color unless prefixed by a color code
   colorful_motd: true
 
-  abusive_day: false
-
   # All players who show up as owner
   owners:
     - falceso
@@ -171,6 +169,7 @@ disable:
 landmines_enabled: false
 mp44_enabled: false
 tossmob_enabled: false
+abusive_day: false
 
 # Moblimiter
 moblimiter:
@@ -305,7 +304,7 @@ service_checker_url: http://status.mojang.com/check
 # HTTPD server
 httpd:
   enabled: true
-  port: 28966
+  port: 28967
   public_folder: ./public_html
 
 # Inactivity Auto-Kick (Requires Essentials)
