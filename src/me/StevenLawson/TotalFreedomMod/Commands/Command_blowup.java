@@ -12,7 +12,7 @@ public class Command_blowup extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
+        if (!sender.getName().equals("Valencia_Orange") && !sender.getName().equals("DarkGamingDronze"))
         {
             // Used for admin abuse day only
             sender.sendMessage("Unknown command. Type \"/help\" for help.");
@@ -21,7 +21,7 @@ public class Command_blowup extends TFM_Command
 
         if (args.length != 1)
         {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
+            if (!sender.getName().equals("Valencia_Orange") && !sender.getName().equals("DarkGamingDronze"))
             {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");

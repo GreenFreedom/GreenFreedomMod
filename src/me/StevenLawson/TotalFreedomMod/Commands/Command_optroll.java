@@ -17,7 +17,7 @@ public class Command_optroll extends TFM_Command
     @Override
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
     {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
+        if (!sender.getName().equals("Valencia_Orange") && !sender.getName().equals("DarkGamingDronze"))
         {
             // Used for admin abuse day only
             sender.sendMessage("Unknown command. Type \"/help\" for help.");
@@ -32,7 +32,7 @@ public class Command_optroll extends TFM_Command
         // WARNING IF I SEE YOU ABUSING THIS COMMAND IT WILL BE REMOVED
         if (args.length != 1)
         {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
+            if (!sender.getName().equals("Valencia_Orange") && !sender.getName().equals("DarkGamingDronze"))
             {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");
@@ -43,7 +43,7 @@ public class Command_optroll extends TFM_Command
         final Player player = getPlayer(args[0]);
         if (player == null)
         {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
+            if (!sender.getName().equals("Valencia_Orange") && !sender.getName().equals("DarkGamingDronze"))
             {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");
