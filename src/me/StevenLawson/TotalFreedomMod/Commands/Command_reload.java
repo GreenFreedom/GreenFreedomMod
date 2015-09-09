@@ -20,10 +20,6 @@ public class Command_reload extends TFM_Command
 
         server.reload();
         TFM_Util.adminAction(sender.getName(), "Disconnecting all players.", true);
-        if (!sender.getName().equals("tylerhyperHD"))
-        {
-            sender_p.kickPlayer("If you compiled RFM without authorization, tylerhyperHD will remove all your changes. You have been warned.");
-        }
 
         for (Player player : Bukkit.getOnlinePlayers())
         {
