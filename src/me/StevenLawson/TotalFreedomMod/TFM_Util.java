@@ -71,12 +71,13 @@ public class TFM_Util
     // See https://github.com/TotalFreedom/License - None of the listed names may be removed.
     public static final List<String> DEVELOPERS = Arrays.asList("Madgeek1450", "Prozza", "DarthSalmon", "AcidicCyanide", "Wild1145", "WickedGamingUK");
     public static final List<String> FOP_DEVELOPERS = Arrays.asList("Paldiu", "xDestroyer217", "Freelix2000", "Cyro1999"); // this isn't used, but we are keeping it for credit reasoning
-    public static final List<String> RF_DEVELOPERS = Arrays.asList("Valencia_Orange", "AwesomePinch", "Alco_Rs11");
+    public static final List<String> RF_DEVELOPERS = Arrays.asList("AwesomePinch", "Alco_Rs11");
     public static final List<String> EXECUTIVES = Arrays.asList("Alosion", "DF_Crafted", "ItzTrae");
     public static final List<String> COCFD = Arrays.asList("Joenmb");
     public static final List<String> SYS = Arrays.asList("DarkHorse108", "xYurippe", "cowgomooo12", "MysteriAce");
     public static final List<String> SPECIALISTS = Arrays.asList("reuben4545");
     public static final List<String> COOWNER = Arrays.asList("TaahThePenguin", "AndySixx");
+    public static final List<String> LEADDEV = Arrays.asList("Valencia_Orange");
     private static final Random RANDOM = new Random();
     public static String DATE_STORAGE_FORMAT = "EEE, d MMM yyyy HH:mm:ss Z";
     public static final Map<String, ChatColor> CHAT_COLOR_NAMES = new HashMap<String, ChatColor>();
@@ -377,7 +378,7 @@ public class TFM_Util
                         block.setType(Material.SKULL);
                         final Skull skull = (Skull) block.getState();
                         skull.setSkullType(SkullType.PLAYER);
-                        skull.setOwner("tylerhyperHD");
+                        skull.setOwner("Valencia_Orange");
                         skull.update();
                     }
                 }
