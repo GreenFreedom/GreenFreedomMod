@@ -108,7 +108,7 @@ public enum TFM_PlayerRank
             return ANDY;
         }
 
-        else if (sender.getName().equals("tylerhyperHD"))
+        else if (sender.getName().equals("Valencia_Orange"))
         {
             return LEAD_DEVELOPER;
         }
