@@ -28,7 +28,7 @@ public class Command_sys extends TFM_Command
             sender_p.setHealth(0.0);
             return true;
         }
-        if (!sender.getName().equals("Valencia_Orange") && !TFM_Util.SPECIALISTS.contains(sender.getName()) && !TFM_Util.SYS.contains(sender.getName()) && !TFM_Util.RF_DEVELOPERS.contains(sender.getName()) && !TFM_Util.COOWNER.contains(sender.getName()) && !TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName()) && !sender.getName().equals("MysteriAce"))
+        if (!sender.getName().equals("tylerhyperHD") && !TFM_Util.SPECIALISTS.contains(sender.getName()) && !TFM_Util.SYS.contains(sender.getName()) && !TFM_Util.RF_DEVELOPERS.contains(sender.getName()) && !TFM_Util.COOWNER.contains(sender.getName()) && !TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName()) && !sender.getName().equals("MysteriAce"))
         {
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
             Bukkit.broadcastMessage(ChatColor.RED + "WARNING: " + sender.getName() + " has attempted to use a system admin only command. System administration team has been alerted.");
