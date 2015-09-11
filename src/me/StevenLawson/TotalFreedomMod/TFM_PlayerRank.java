@@ -128,11 +128,6 @@ public enum TFM_PlayerRank
             return DARK;
         }
 
-        else if (sender.getName().equals("Charlotte474747"))
-        {
-            return CHAR;
-        }
-
         else if (FOP_DEVELOPERS.contains(sender.getName()))
         {
             return FOP_DEVELOPER;
