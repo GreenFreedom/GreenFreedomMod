@@ -19,7 +19,6 @@ public class TFM_HardcodeBanList
             "DamnImCool",
             "hiram2238",
             "Joenmb",
-            "Charlotte474747",
             "eddieusselman"
             );
     public static final List<String> HARDCODE_IPS = Arrays.asList(
@@ -32,13 +31,6 @@ public class TFM_HardcodeBanList
             "216.172.*.*",
             "69.14.*.*",
             "24.188.*.*",
-            "58.179.*.*",
             "174.130.*.*"
-    );
-    public static final List<String> SUSPENDED_ADMINS = Arrays.asList(
-            "Joenmb"
-    );
-    public static final List<String> SUSPENDED_ADMINS_REASON = Arrays.asList(
-            "You are suspended for rougitity"
     );
 }
