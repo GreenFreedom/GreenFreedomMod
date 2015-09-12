@@ -24,8 +24,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public final class TFM_DonatorWorld extends TFM_CustomWorld
-{
+public final class TFM_DonatorWorld extends TFM_CustomWorld {
+
     private static final long CACHE_CLEAR_FREQUENCY = 30L * 1000L; //30 seconds, milliseconds
     private static final long TP_COOLDOWN_TIME = 500L; //0.5 seconds, milliseconds
     private static final String GENERATION_PARAMETERS = TFM_ConfigEntry.FLATLANDS_GENERATE_PARAMS.getString();
@@ -38,15 +38,12 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
     private WeatherMode weatherMode = WeatherMode.OFF;
     private TimeOfDay timeOfDay = TimeOfDay.INHERIT;
 
-    private TFM_DonatorWorld()
-    {
+    private TFM_DonatorWorld() {
     }
 
     @Override
-    public void sendToWorld(Player player)
-    {
-        if (!canAccessWorld(player))
-        {
+    public void sendToWorld(Player player) {
+        if (!canAccessWorld(player)) {
             return;
         }
 
@@ -54,8 +51,7 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
     }
 
     @Override
-    protected World generateWorld()
-    {
+    protected World generateWorld() {
         WorldCreator worldCreator = new WorldCreator(WORLD_NAME);
         worldCreator.generateStructures(false);
         worldCreator.type(WorldType.NORMAL);
@@ -86,34 +82,25 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
     }
 
     @SuppressWarnings("UnnecessaryUnboxing")
-    public boolean validateMovement(PlayerMoveEvent event)
-    {
+    public boolean validateMovement(PlayerMoveEvent event) {
         World world;
-        try
-        {
+        try {
             world = getWorld();
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
             return true;
         }
 
-        if (world != null && event.getTo().getWorld() == world)
-        {
+        if (world != null && event.getTo().getWorld() == world) {
             final Player player = event.getPlayer();
-            if (!canAccessWorld(player))
-            {
+            if (!canAccessWorld(player)) {
                 Long lastTP = teleportCooldown.get(player);
                 long currentTimeMillis = System.currentTimeMillis();
-                if (lastTP == null || lastTP.longValue() + TP_COOLDOWN_TIME <= currentTimeMillis)
-                {
+                if (lastTP == null || lastTP.longValue() + TP_COOLDOWN_TIME <= currentTimeMillis) {
                     teleportCooldown.put(player, currentTimeMillis);
                     TFM_Log.info(player.getName() + " attempted to access the donator-only world.");
-                    new BukkitRunnable()
-                    {
+                    new BukkitRunnable() {
                         @Override
-                        public void run()
-                        {
+                        public void run() {
                             player.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
                         }
                     }.runTaskLater(TotalFreedomMod.plugin, 1L);
@@ -126,28 +113,23 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         return true;
     }
 
-    public void wipeAccessCache()
-    {
+    public void wipeAccessCache() {
         cacheLastCleared = System.currentTimeMillis();
         accessCache.clear();
     }
 
     @SuppressWarnings("UnnecessaryUnboxing")
-    public boolean canAccessWorld(final Player player)
-    {
+    public boolean canAccessWorld(final Player player) {
         long currentTimeMillis = System.currentTimeMillis();
-        if (cacheLastCleared == null || cacheLastCleared.longValue() + CACHE_CLEAR_FREQUENCY <= currentTimeMillis)
-        {
+        if (cacheLastCleared == null || cacheLastCleared.longValue() + CACHE_CLEAR_FREQUENCY <= currentTimeMillis) {
             cacheLastCleared = currentTimeMillis;
             accessCache.clear();
         }
 
         Boolean cached = accessCache.get(player);
-        if (cached == null)
-        {
+        if (cached == null) {
             boolean canAccess = TFM_DonatorList.isDonator(player) || TFM_AdminList.isSuperAdmin(player);
-            if (!canAccess)
-            {
+            if (!canAccess) {
             }
             cached = canAccess;
             accessCache.put(player, cached);
@@ -155,21 +137,19 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         return cached;
     }
 
-    public static enum WeatherMode
-    {
+    public static enum WeatherMode {
+
         OFF("off"),
         RAIN("rain"),
         STORM("storm,thunderstorm");
         //
         private final List<String> aliases;
 
-        private WeatherMode(String aliases)
-        {
+        private WeatherMode(String aliases) {
             this.aliases = Arrays.asList(StringUtils.split(aliases, ","));
         }
 
-        private void setWorldToWeather(World world)
-        {
+        private void setWorldToWeather(World world) {
             world.setStorm(this == RAIN || this == STORM);
             world.setWeatherDuration(this == RAIN || this == STORM ? 20 * 60 * 5 : 0);
 
@@ -177,13 +157,10 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
             world.setThunderDuration(this == STORM ? 20 * 60 * 5 : 0);
         }
 
-        public static WeatherMode getByAlias(String needle)
-        {
+        public static WeatherMode getByAlias(String needle) {
             needle = needle.toLowerCase();
-            for (WeatherMode mode : values())
-            {
-                if (mode.aliases.contains(needle))
-                {
+            for (WeatherMode mode : values()) {
+                if (mode.aliases.contains(needle)) {
                     return mode;
                 }
             }
@@ -191,8 +168,8 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         }
     }
 
-    public static enum TimeOfDay
-    {
+    public static enum TimeOfDay {
+
         INHERIT(),
         SUNRISE("sunrise,morning", 0),
         NOON("noon,midday,day", 6000),
@@ -202,37 +179,30 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         private final int timeTicks;
         private final List<String> aliases;
 
-        private TimeOfDay()
-        {
+        private TimeOfDay() {
             this.timeTicks = 0;
             this.aliases = null;
         }
 
-        private TimeOfDay(String aliases, int timeTicks)
-        {
+        private TimeOfDay(String aliases, int timeTicks) {
             this.timeTicks = timeTicks;
             this.aliases = Arrays.asList(StringUtils.split(aliases, ","));
         }
 
-        public int getTimeTicks()
-        {
+        public int getTimeTicks() {
             return timeTicks;
         }
 
-        public void setWorldToTime(World world)
-        {
+        public void setWorldToTime(World world) {
             long time = world.getTime();
             time -= time % 24000;
             world.setTime(time + 24000 + getTimeTicks());
         }
 
-        public static TimeOfDay getByAlias(String needle)
-        {
+        public static TimeOfDay getByAlias(String needle) {
             needle = needle.toLowerCase();
-            for (TimeOfDay time : values())
-            {
-                if (time.aliases != null && time.aliases.contains(needle))
-                {
+            for (TimeOfDay time : values()) {
+                if (time.aliases != null && time.aliases.contains(needle)) {
                     return time;
                 }
             }
@@ -240,49 +210,38 @@ public final class TFM_DonatorWorld extends TFM_CustomWorld
         }
     }
 
-    public WeatherMode getWeatherMode()
-    {
+    public WeatherMode getWeatherMode() {
         return weatherMode;
     }
 
-    public void setWeatherMode(final WeatherMode weatherMode)
-    {
+    public void setWeatherMode(final WeatherMode weatherMode) {
         this.weatherMode = weatherMode;
 
-        try
-        {
+        try {
             weatherMode.setWorldToWeather(getWorld());
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
         }
     }
 
-    public TimeOfDay getTimeOfDay()
-    {
+    public TimeOfDay getTimeOfDay() {
         return timeOfDay;
     }
 
-    public void setTimeOfDay(final TimeOfDay timeOfDay)
-    {
+    public void setTimeOfDay(final TimeOfDay timeOfDay) {
         this.timeOfDay = timeOfDay;
 
-        try
-        {
+        try {
             timeOfDay.setWorldToTime(getWorld());
-        }
-        catch (Exception ex)
-        {
+        } catch (Exception ex) {
         }
     }
 
-    public static TFM_DonatorWorld getInstance()
-    {
+    public static TFM_DonatorWorld getInstance() {
         return TFM_DonatorWorldHolder.INSTANCE;
     }
 
-    private static class TFM_DonatorWorldHolder
-    {
+    private static class TFM_DonatorWorldHolder {
+
         private static final TFM_DonatorWorld INSTANCE = new TFM_DonatorWorld();
     }
 }

@@ -10,41 +10,34 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Start a abusive day", usage = "/<command> [on | off]", aliases = "tm")
-public class Command_abusiveday extends TFM_Command
-{
+public class Command_abusiveday extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
             // This is a secret command, other members from the staff list knowing this may result into a command wipe.
             // ~Dark
             sender.sendMessage("Unknown command. Type \"/help\" for help.");
             return true;
         }
-        if (args.length != 1)
-        {
+        if (args.length != 1) {
             return false;
         }
 
-        if (args[0].equalsIgnoreCase("off -s"))
-        {
+        if (args[0].equalsIgnoreCase("off -s")) {
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(false);
             TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(false);
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(false);
             return true;
         }
 
-        if (args[0].equalsIgnoreCase("off"))
-        {
+        if (args[0].equalsIgnoreCase("off")) {
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(false);
             TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(false);
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(false);
             TFM_Util.adminAction(sender.getName(), "Stopping the abusive day...", true);
             return true;
-        }
-        else if (args[0].equalsIgnoreCase("on"))
-        {
+        } else if (args[0].equalsIgnoreCase("on")) {
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(true);
             TFM_ConfigEntry.ADMIN_ONLY_MODE.setBoolean(true);
             TFM_ConfigEntry.ABUSIVE_DAY.setBoolean(true);
@@ -62,13 +55,11 @@ public class Command_abusiveday extends TFM_Command
             TFM_Util.bcastMsg("Abusive day rules:", ChatColor.YELLOW);
             TFM_Util.bcastMsg("[1] You may not abuse on the Owners/Chief dev.", ChatColor.RED);
             TFM_Util.bcastMsg("[2] If the Owner/Chief dev says to stop abusing you need to stop now.", ChatColor.RED);
-            for (Player player : server.getOnlinePlayers())
-            {
-                if (!TFM_AdminList.isSuperAdmin(player))
-                {
+            for (Player player : server.getOnlinePlayers()) {
+                if (!TFM_AdminList.isSuperAdmin(player)) {
                     player.kickPlayer("RubyFreedom now started abusive day, relog in 1 hour.");
                 }
-                
+
             }
             return true;
         }

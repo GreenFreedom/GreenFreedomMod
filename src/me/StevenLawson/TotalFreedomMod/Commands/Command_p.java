@@ -9,41 +9,33 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "AdminChat - Talk privately with other admins. Using <command> itself will toggle AdminChat on and off for all messages.", usage = "/<command> [message...]", aliases = "senioradminchat")
-public class Command_p extends TFM_Command
-{
+public class Command_p extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (args.length == 0)
-        {
-            if (senderIsConsole)
-            {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (args.length == 0) {
+            if (senderIsConsole) {
                 playerMsg("Only in-game players can toggle Senior Admin Chat.");
                 return true;
             }
 
             TFM_PlayerData userinfo = TFM_PlayerData.getPlayerData(sender_p);
 
-            if (userinfo.inAdminChat())
-            {
+            if (userinfo.inAdminChat()) {
                 userinfo.setAdminChat(!userinfo.inAdminChat());
             }
 
-            if (userinfo.inDevChat())
-            {
+            if (userinfo.inDevChat()) {
                 userinfo.setDevChat(!userinfo.inDevChat());
             }
 
-            if (userinfo.inTelnetAdminChat())
-            {
+            if (userinfo.inTelnetAdminChat()) {
                 userinfo.setTelnetAdminChat(!userinfo.inTelnetAdminChat());
             }
 
             userinfo.setSeniorAdminChat(!userinfo.inSeniorAdminChat());
             playerMsg("Toggled Senior Admin Chat " + (userinfo.inSeniorAdminChat() ? "on" : "off") + ".");
-        }
-        else
-        {
+        } else {
             FOPM_TFM_Util.SeniorAdminChatMessage(sender, StringUtils.join(args, " "), senderIsConsole);
         }
 

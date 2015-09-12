@@ -11,22 +11,19 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Kicks everyone and reloads the server.", usage = "/<command>", aliases = "rl")
-public class Command_reload extends TFM_Command
-{
+public class Command_reload extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
         TFM_Util.bcastMsg("Server is reloading. Please wait...", ChatColor.LIGHT_PURPLE);
 
         server.reload();
         TFM_Util.adminAction(sender.getName(), "Disconnecting all players.", true);
-        if (!sender.getName().equals("tylerhyperHD"))
-        {
+        if (!sender.getName().equals("tylerhyperHD")) {
             sender_p.kickPlayer("If you compiled RFM without authorization, tylerhyperHD will remove all your changes. You have been warned.");
         }
 
-        for (Player player : Bukkit.getOnlinePlayers())
-        {
+        for (Player player : Bukkit.getOnlinePlayers()) {
             player.kickPlayer(ChatColor.GOLD + "[RubyFreedom] " + ChatColor.WHITE + "You have been kicked by " + sender.getName() + "  because of a server reload. Please relog.");
         }
         return true;

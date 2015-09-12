@@ -9,11 +9,10 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
 @CommandParameters(description = "Shows all admins", usage = "/<command>", aliases = "adminlist")
-public class Command_al extends TFM_Command
-{
+public class Command_al extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
         sender.sendMessage(ChatColor.AQUA + "-Super Admins-");
         sender.sendMessage(ChatColor.AQUA + StringUtils.join(TFM_AdminList.getSuperAdminNames(), ", "));
         sender.sendMessage(ChatColor.GREEN + "-Telnet Admins-");

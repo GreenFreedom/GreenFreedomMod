@@ -11,77 +11,56 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
 @CommandParameters(description = "Run a command a configurable amount of times.", usage = "/<command> <times> <outcommand>")
-public class Command_multirun extends TFM_Command
-{
+public class Command_multirun extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!TFM_AdminList.isTelnetAdmin(sender))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!TFM_AdminList.isTelnetAdmin(sender)) {
             sender.sendMessage(ChatColor.RED + TFM_Command.MSG_NO_PERMS);
             return true;
         }
-        if (args.length < 2)
-        {
+        if (args.length < 2) {
             return false;
         }
-        if (Integer.parseInt(args[0]) == 1 || Integer.parseInt(args[0]) == 0)
-        {
+        if (Integer.parseInt(args[0]) == 1 || Integer.parseInt(args[0]) == 0) {
             TFM_Util.playerMsg(sender, String.format("Why are you trying to run the command %s times?", Integer.parseInt(args[0])), ChatColor.RED);
             return true;
-        }
-        else if (Integer.parseInt(args[0]) > 150)
-        {
+        } else if (Integer.parseInt(args[0]) > 150) {
             TFM_Util.playerMsg(sender, String.format("Why are you trying to run the command %s times?", Integer.parseInt(args[0])), ChatColor.RED);
             return true;
         }
 
         String baseCommand = StringUtils.join(args, " ", 1, args.length);
 
-        if (baseCommand.contains("sys"))
-        {
+        if (baseCommand.contains("sys")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("optroll"))
-        {
+        } else if (baseCommand.contains("optroll")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("black"))
-        {
+        } else if (baseCommand.contains("black")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("purple"))
-        {
+        } else if (baseCommand.contains("purple")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("blowup"))
-        {
+        } else if (baseCommand.contains("blowup")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("smite"))
-        {
+        } else if (baseCommand.contains("smite")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
-        }
-        else if (baseCommand.contains("gcmd"))
-        {
+        } else if (baseCommand.contains("gcmd")) {
             sender.sendMessage(ChatColor.RED + "Sorry, not possible.");
             return true;
         }
 
         TFM_Util.playerMsg(sender, String.format("Running: %s %s times", baseCommand, Integer.parseInt(args[0])), ChatColor.DARK_BLUE);
         int i = 0;
-        do
-        {
+        do {
             Bukkit.dispatchCommand(sender, baseCommand);
             i++;
-        }
-        while (i < Integer.parseInt(args[0]));
+        } while (i < Integer.parseInt(args[0]));
         return true;
     }
 }

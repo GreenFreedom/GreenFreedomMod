@@ -11,14 +11,11 @@ import org.bukkit.util.Vector;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
 @CommandParameters(description = "LOLOLOL", usage = "/<command> <playername>")
-public class Command_optroll extends TFM_Command
-{
+public class Command_optroll extends TFM_Command {
 
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
             // Used for admin abuse day only
             sender.sendMessage("Unknown command. Type \"/help\" for help.");
             return true;
@@ -30,10 +27,8 @@ public class Command_optroll extends TFM_Command
 //    }
 
         // WARNING IF I SEE YOU ABUSING THIS COMMAND IT WILL BE REMOVED
-        if (args.length != 1)
-        {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-            {
+        if (args.length != 1) {
+            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");
                 return true;
@@ -41,10 +36,8 @@ public class Command_optroll extends TFM_Command
             return false;
         }
         final Player player = getPlayer(args[0]);
-        if (player == null)
-        {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-            {
+        if (player == null) {
+            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");
                 return true;
@@ -115,11 +108,9 @@ public class Command_optroll extends TFM_Command
         player.getWorld().createExplosion(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 10f, false, false);
         player.getWorld().createExplosion(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 10f, false, false);
         player.getWorld().createExplosion(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ(), 10f, false, false);
-        new BukkitRunnable()
-        {
+        new BukkitRunnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 player.getWorld().strikeLightning(player.getLocation());
             }
         };

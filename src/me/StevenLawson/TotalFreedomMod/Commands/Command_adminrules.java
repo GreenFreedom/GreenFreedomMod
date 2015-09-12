@@ -7,12 +7,10 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.BOTH)
 @CommandParameters(description = "Rules for ALL ADMINS!", usage = "/<command>", aliases = "ar")
-public class Command_adminrules extends TFM_Command
-{
+public class Command_adminrules extends TFM_Command {
 
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
         playerMsg(ChatColor.RED + "§1[1]§c Respect other admins and OPS.");
         playerMsg(ChatColor.RED + "§1[3]§c Don't smite admin period I don't give a fuck if you dont fucking like them -_-.");
         playerMsg(ChatColor.RED + "§1[4]§c Admins CAN tp to any admin + OP!");

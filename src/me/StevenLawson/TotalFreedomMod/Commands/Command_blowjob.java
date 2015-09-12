@@ -12,27 +12,23 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Give someone a blowjob.", usage = "/<command> <player>")
-public class Command_blowjob extends TFM_Command
-{
+public class Command_blowjob extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD") && !TFM_Util.SPECIALISTS.contains(sender.getName()) && !TFM_Util.SYS.contains(sender.getName()) && !TFM_Util.RF_DEVELOPERS.contains(sender.getName()) && !TFM_Util.COOWNER.contains(sender.getName()) && !TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName()) && !sender.getName().equals("MysteriAce"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD") && !TFM_Util.SPECIALISTS.contains(sender.getName()) && !TFM_Util.SYS.contains(sender.getName()) && !TFM_Util.RF_DEVELOPERS.contains(sender.getName()) && !TFM_Util.COOWNER.contains(sender.getName()) && !TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName()) && !sender.getName().equals("MysteriAce")) {
             sender.sendMessage("You cannot give others blowjobs u fuck. No perms for you.");
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
 
             return true;
         }
-        if (args.length != 1)
-        {
+        if (args.length != 1) {
             return false;
         }
 
         final Player player = getPlayer(args[0]);
 
-        if (player == null)
-        {
+        if (player == null) {
             sender.sendMessage("Player not found!");
             return true;
         }
@@ -43,11 +39,9 @@ public class Command_blowjob extends TFM_Command
         TFM_PlayerData playerdata = TFM_PlayerData.getPlayerData(player);
         playerdata.setFrozen(!playerdata.isFrozen());
         player.chat("Ohhhh yeahhhhh.");
-        new BukkitRunnable()
-        {
+        new BukkitRunnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 TFM_Util.bcastMsg(player.getName() + " got fucked too hard, and fell asleep whilst the fuck happened.", ChatColor.RED);
                 player.setHealth(0.0);
                 player.sendMessage(ChatColor.RED + "You just got a blowjob by a gay guy in Minecraft!");

@@ -13,11 +13,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class TFM_VoteListener implements Listener
-{
+public class TFM_VoteListener implements Listener {
+
     @EventHandler
-    public void voteMade(VotifierEvent event)
-    {
+    public void voteMade(VotifierEvent event) {
         Vote vote = event.getVote();
         Player player = Bukkit.getPlayer(vote.getUsername());
         Bukkit.broadcastMessage(FOPM_TFM_Util.randomChatColour() + player.getName() + " has voted on " + vote.getServiceName() + " and have received a goodie basket!");
@@ -30,8 +29,7 @@ public class TFM_VoteListener implements Listener
         inv.addItem(cookie);
         inv.addItem(cake);
         Bukkit.dispatchCommand(player, "opitems");
-        for (int i = 0; i <= 100; i++)
-        {
+        for (int i = 0; i <= 100; i++) {
             player.awardAchievement(FOPM_TFM_Util.randomAchievement());
         }
     }

@@ -11,8 +11,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public enum TFM_PlayerRank
-{
+public enum TFM_PlayerRank {
+
     DEVELOPER("a " + ChatColor.DARK_PURPLE + "TotalFreedom Developer", ChatColor.DARK_PURPLE + "[TF-Dev]"),
     FOP_DEVELOPER("a " + ChatColor.DARK_PURPLE + "Old FreedomOp Developer", ChatColor.DARK_PURPLE + "[FOP-Dev]"),
     RF_DEVELOPER("a " + ChatColor.DARK_PURPLE + "Developer", ChatColor.DARK_PURPLE + "[Dev]"),
@@ -38,24 +38,20 @@ public enum TFM_PlayerRank
     private final String loginMessage;
     private final String prefix;
 
-    private TFM_PlayerRank(String loginMessage, String prefix)
-    {
+    private TFM_PlayerRank(String loginMessage, String prefix) {
         this.loginMessage = loginMessage;
         this.prefix = prefix;
     }
 
-    public static String getLoginMessage(CommandSender sender)
-    {
+    public static String getLoginMessage(CommandSender sender) {
         // Handle console
-        if (!(sender instanceof Player))
-        {
+        if (!(sender instanceof Player)) {
             return fromSender(sender).getLoginMessage();
         }
 
         // Handle admins
         final TFM_Admin entry = TFM_AdminList.getEntry((Player) sender);
-        if (entry == null)
-        {
+        if (entry == null) {
             // Player is not an admin
             return fromSender(sender).getLoginMessage();
         }
@@ -63,98 +59,63 @@ public enum TFM_PlayerRank
         // Custom login message
         final String loginMessage = entry.getCustomLoginMessage();
 
-        if (loginMessage == null || loginMessage.isEmpty())
-        {
+        if (loginMessage == null || loginMessage.isEmpty()) {
             return fromSender(sender).getLoginMessage();
         }
 
         return ChatColor.translateAlternateColorCodes('&', loginMessage);
     }
 
-    public static TFM_PlayerRank fromSender(CommandSender sender)
-    {
-        if (!(sender instanceof Player))
-        {
+    public static TFM_PlayerRank fromSender(CommandSender sender) {
+        if (!(sender instanceof Player)) {
             return CONSOLE;
         }
 
-        if (TFM_Util.imposters.contains((Player) sender))
-        {
+        if (TFM_Util.imposters.contains((Player) sender)) {
             return FAKEIMPOSTOR;
         }
 
-        if (TFM_AdminList.isAdminImpostor((Player) sender))
-        {
+        if (TFM_AdminList.isAdminImpostor((Player) sender)) {
             return IMPOSTOR;
-        }
-
-        else if (DEVELOPERS.contains(sender.getName()))
-        {
+        } else if (DEVELOPERS.contains(sender.getName())) {
             return DEVELOPER;
-        }
-
-        else if (sender.getName().equals("Joenmb"))
-        {
+        } else if (sender.getName().equals("Joenmb")) {
             return CHAR;
-        }
-
-        else if (sender.getName().equals("reuben4545"))
-        {
+        } else if (sender.getName().equals("reuben4545")) {
             return LEAD_SPECIALIST;
-        }
-
-        else if (sender.getName().equals("AndySixx"))
-        {
+        } else if (sender.getName().equals("AndySixx")) {
             return ANDY;
-        }
-
-        else if (sender.getName().equals("tylerhyperHD"))
-        {
+        } else if (sender.getName().equals("tylerhyperHD")) {
             return LEAD_DEVELOPER;
-        }
-
-        else if (sender.getName().equals("MysteriAce"))
-        {
+        } else if (sender.getName().equals("MysteriAce")) {
             return MYSTERI;
-        }
-
-        else if (sender.getName().equals("DarkHorse108"))
-        {
+        } else if (sender.getName().equals("DarkHorse108")) {
             return HORSE;
-        }
-
-        else if (sender.getName().equals("DarkGamingDronze"))
-        {
+        } else if (sender.getName().equals("DarkGamingDronze")) {
             return DARK;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        } else if (sender.getName().equals("Charlotte474747")) {
+            return CHAR;
+        } else if (FOP_DEVELOPERS.contains(sender.getName())) {
+=======
+>>>>>>> Stashed changes
         }
 
         else if (FOP_DEVELOPERS.contains(sender.getName()))
         {
+>>>>>>> origin/master
             return FOP_DEVELOPER;
-        }
-
-        else if (RF_DEVELOPERS.contains(sender.getName()))
-        {
+        } else if (RF_DEVELOPERS.contains(sender.getName())) {
             return RF_DEVELOPER;
-        }
-
-        else if (SYS.contains(sender.getName()))
-        {
+        } else if (SYS.contains(sender.getName())) {
             return SYS_ADMIN;
-        }
-
-        else if (sender.getName().equals("MysteriAce"))
-        {
+        } else if (sender.getName().equals("MysteriAce")) {
             return MYSTERI;
-        }
-
-        else if (EXECUTIVES.contains(sender.getName()))
-        {
+        } else if (EXECUTIVES.contains(sender.getName())) {
             return EXEC;
-        }
-
-        else if (COOWNER.contains(sender.getName()))
-        {
+        } else if (COOWNER.contains(sender.getName())) {
             return CO_OWNER;
         }
 
@@ -162,34 +123,22 @@ public enum TFM_PlayerRank
 
         final TFM_PlayerRank rank;
 
-        if (entry != null && entry.isActivated())
-        {
-            if (TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName()))
-            {
+        if (entry != null && entry.isActivated()) {
+            if (TFM_ConfigEntry.SERVER_OWNERS.getList().contains(sender.getName())) {
                 return OWNER;
             }
 
-            if (entry.isSeniorAdmin())
-            {
+            if (entry.isSeniorAdmin()) {
                 rank = SENIOR;
-            }
-            else if (entry.isTelnetAdmin())
-            {
+            } else if (entry.isTelnetAdmin()) {
                 rank = TELNET;
-            }
-            else
-            {
+            } else {
                 rank = SUPER;
             }
-        }
-        else
-        {
-            if (sender.isOp())
-            {
+        } else {
+            if (sender.isOp()) {
                 rank = OP;
-            }
-            else
-            {
+            } else {
                 rank = NON_OP;
             }
 
@@ -197,13 +146,11 @@ public enum TFM_PlayerRank
         return rank;
     }
 
-    public String getPrefix()
-    {
+    public String getPrefix() {
         return prefix;
     }
 
-    public String getLoginMessage()
-    {
+    public String getLoginMessage() {
         return loginMessage;
     }
 }

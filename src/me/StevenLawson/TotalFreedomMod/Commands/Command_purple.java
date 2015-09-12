@@ -21,26 +21,21 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.ONLY_IN_GAME)
 @CommandParameters(description = "Graces the world with purple. Command that is pretty pointless unless you are tyler.", usage = "/<command>")
-public class Command_purple extends TFM_Command
-{
+public class Command_purple extends TFM_Command {
+
     @Override
     @SuppressWarnings("unchecked")
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD")) {
             sender_p.sendMessage(ChatColor.RED + "Only Tyler may use this command.\nNo permissions for the people who aren't purple.");
             sender_p.setHealth(0.0);
             return true;
         }
-        if (args.length == 0)
-        {
-            for (Player player : Bukkit.getOnlinePlayers())
-            {
+        if (args.length == 0) {
+            for (Player player : Bukkit.getOnlinePlayers()) {
                 World world = player.getWorld();
                 Location loc = player.getLocation();
-                for (int i = 0; i <= 100; i++)
-                {
+                for (int i = 0; i <= 100; i++) {
                     TFM_Util.adminAction(sender_p.getName(), "Gracing the world with purple!", false);
                     world.strikeLightningEffect(loc);
                 }
@@ -53,10 +48,8 @@ public class Command_purple extends TFM_Command
                 ItemStack CamLegs = new ItemStack(Material.LEATHER_LEGGINGS, 1);
                 ItemStack CamBoots = new ItemStack(Material.LEATHER_BOOTS, 1);
 
-                for (Enchantment ench : Enchantment.values())
-                {
-                    if (ench.equals(Enchantment.LOOT_BONUS_MOBS) || ench.equals(Enchantment.LOOT_BONUS_BLOCKS))
-                    {
+                for (Enchantment ench : Enchantment.values()) {
+                    if (ench.equals(Enchantment.LOOT_BONUS_MOBS) || ench.equals(Enchantment.LOOT_BONUS_BLOCKS)) {
                         continue;
                     }
                     CamWool.addUnsafeEnchantment(ench, 32767);
@@ -81,32 +74,25 @@ public class Command_purple extends TFM_Command
                 chest.setDisplayName(ChatColor.YELLOW + "Purple Chestplate");
                 legs.setDisplayName(ChatColor.YELLOW + "Purple Leggings");
                 boots.setDisplayName(ChatColor.YELLOW + "Purple Boots");
-                Object lorewool = Arrays.asList(new String[]
-                {
+                Object lorewool = Arrays.asList(new String[]{
                     ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm."
                 });
-                Object lorebow = Arrays.asList(new String[]
-                {
+                Object lorebow = Arrays.asList(new String[]{
                     ChatColor.BLUE + "Legend has it, this bow", ChatColor.BLUE + "can only shoot purple arrows!"
                 });
-                Object loresword = Arrays.asList(new String[]
-                {
+                Object loresword = Arrays.asList(new String[]{
                     ChatColor.BLUE + "The purple has the power", ChatColor.BLUE + "to wield this legendary blade!"
                 });
-                Object lorearrow = Arrays.asList(new String[]
-                {
+                Object lorearrow = Arrays.asList(new String[]{
                     ChatColor.BLUE + "This arrow has a mysterious", ChatColor.BLUE + "purple aura around it..."
                 });
-                Object lorechestplate = Arrays.asList(new String[]
-                {
+                Object lorechestplate = Arrays.asList(new String[]{
                     ChatColor.BLUE + "This chestplate should protect", ChatColor.BLUE + "you from all possible harm."
                 });
-                Object loreleggings = Arrays.asList(new String[]
-                {
+                Object loreleggings = Arrays.asList(new String[]{
                     ChatColor.BLUE + "These leggings should protect", ChatColor.BLUE + "you from all possible harm."
                 });
-                Object loreboots = Arrays.asList(new String[]
-                {
+                Object loreboots = Arrays.asList(new String[]{
                     ChatColor.BLUE + "These boots should protect", ChatColor.BLUE + "you from all possible harm."
                 });
                 wool.setLore((List) lorewool);
@@ -127,28 +113,19 @@ public class Command_purple extends TFM_Command
                 CamLegs.setItemMeta(legs);
                 CamBoots.setItemMeta(boots);
                 // This method sees if the player already has the item, if so, it doesn't add it again
-                if (inv.contains(CamBow))
-                {
+                if (inv.contains(CamBow)) {
                     continue;
-                }
-                else
-                {
+                } else {
                     inv.addItem(CamBow);
                 }
-                if (inv.contains(CamSword))
-                {
+                if (inv.contains(CamSword)) {
                     continue;
-                }
-                else
-                {
+                } else {
                     inv.addItem(CamSword);
                 }
-                if (inv.contains(CamArrow))
-                {
+                if (inv.contains(CamArrow)) {
                     continue;
-                }
-                else
-                {
+                } else {
                     inv.addItem(CamArrow);
                 }
                 inv.setHelmet(CamWool);

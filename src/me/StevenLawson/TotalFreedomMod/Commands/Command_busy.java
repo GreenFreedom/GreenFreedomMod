@@ -8,21 +8,18 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SUPER, source = SourceType.BOTH)
 @CommandParameters(description = "Busy atm.", usage = "/<command> [on | off]")
-public class Command_busy extends TFM_Command
-{
+public class Command_busy extends TFM_Command {
 
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (args.length == 1)
-        {
-            if (args[0].equalsIgnoreCase("on"))
-            {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (args.length == 0) {
+            return false;
+        }
+        if (args.length == 1) {
+            if (args[0].equalsIgnoreCase("on")) {
                 TFM_Util.adminAction(ChatColor.RED + sender.getName(), "I'm currently busy, please contact another admin.", false);
                 return true;
-            }
-            else if (args[0].equalsIgnoreCase("off"))
-            {
+            } else if (args[0].equalsIgnoreCase("off")) {
                 TFM_Util.adminAction(ChatColor.AQUA + sender.getName(), "I'm not busy anymore, you can contact me now.", false);
                 return true;
             }

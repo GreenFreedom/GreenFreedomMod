@@ -8,21 +8,18 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.ALL, source = SourceType.BOTH)
 @CommandParameters(description = "Kicks everyone and stops the server.", usage = "/<command>")
-public class Command_tr extends TFM_Command
-{
+public class Command_tr extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze") && !sender.getName().equals("AwesomePinch"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze") && !sender.getName().equals("AwesomePinch")) {
             sender.sendMessage(TFM_Command.MSG_NO_PERMS);
             return true;
         }
 
         TFM_Util.bcastMsg("Server is going offline!", ChatColor.LIGHT_PURPLE);
 
-        for (Player player : server.getOnlinePlayers())
-        {
+        for (Player player : server.getOnlinePlayers()) {
             player.kickPlayer("Server is restarting to make changes to plugins. Come back in about 20 seconds.");
         }
 

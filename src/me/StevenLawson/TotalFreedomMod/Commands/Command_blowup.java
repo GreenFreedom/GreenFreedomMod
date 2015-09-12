@@ -7,22 +7,18 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "Blow someone up.", usage = "/<command> <player>")
-public class Command_blowup extends TFM_Command
-{
+public class Command_blowup extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
-        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-        {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
+        if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
             // Used for admin abuse day only
             sender.sendMessage("Unknown command. Type \"/help\" for help.");
             return true;
         }
 
-        if (args.length != 1)
-        {
-            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze"))
-            {
+        if (args.length != 1) {
+            if (!sender.getName().equals("tylerhyperHD") && !sender.getName().equals("DarkGamingDronze")) {
                 // Used for admin abuse day only
                 sender.sendMessage("Unknown command. Type \"/help\" for help.");
                 return true;
@@ -32,8 +28,7 @@ public class Command_blowup extends TFM_Command
 
         final Player player = getPlayer(args[0]);
 
-        if (player == null)
-        {
+        if (player == null) {
             sender.sendMessage(ChatColor.RED + "Player not found!");
             return true;
         }

@@ -8,11 +8,10 @@ import org.bukkit.entity.Player;
 
 @CommandPermissions(level = AdminLevel.SENIOR, source = SourceType.BOTH)
 @CommandParameters(description = "Cleans the server", usage = "/<command>")
-public class Command_cleanup extends TFM_Command
-{
+public class Command_cleanup extends TFM_Command {
+
     @Override
-    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole)
-    {
+    public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
         TFM_Util.bcastMsg(ChatColor.RED + "Atempting to start server cleanup, expect lag for few seconds!");
         server.dispatchCommand(sender, "opall -c");
         server.dispatchCommand(sender, "setl");
