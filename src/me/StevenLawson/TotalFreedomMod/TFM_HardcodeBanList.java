@@ -19,7 +19,8 @@ public class TFM_HardcodeBanList
             "DamnImCool",
             "hiram2238",
             "Joenmb",
-            "eddieusselman"
+            "eddieusselman",
+            "YoukSon"
             );
     public static final List<String> HARDCODE_IPS = Arrays.asList(
             "77.98.*.*",
@@ -31,6 +32,7 @@ public class TFM_HardcodeBanList
             "216.172.*.*",
             "69.14.*.*",
             "24.188.*.*",
-            "174.130.*.*"
+            "174.130.*.*",
+            "86.160.*.*"
     );
 }
