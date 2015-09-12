@@ -19,17 +19,9 @@ public class TFM_HardcodeBanList {
             "DamnImCool",
             "hiram2238",
             "Joenmb",
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-            "eddieusselman"
-    );
-=======
->>>>>>> Stashed changes
             "eddieusselman",
             "YoukSon"
             );
->>>>>>> origin/master
     public static final List<String> HARDCODE_IPS = Arrays.asList(
             "77.98.*.*",
             "77.64.*.*",

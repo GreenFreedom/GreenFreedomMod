@@ -91,20 +91,9 @@ public class Command_cage extends TFM_Command {
 
         if (outerMaterial != Material.SKULL) {
             TFM_Util.adminAction(sender.getName(), "Caging " + player.getName(), true);
-<<<<<<< HEAD
         } else {
             TFM_Util.adminAction(sender.getName(), "Caging " + player.getName() + " in PURE_DARTH", true);
-=======
         }
-        else
-        {
-            TFM_Util.adminAction(sender.getName(), "Caging " + player.getName() + " in PURE_PINCH", true);
-<<<<<<< Updated upstream
-=======
->>>>>>> origin/master
->>>>>>> Stashed changes
-        }
-
         return true;
-    }
+        }
 }

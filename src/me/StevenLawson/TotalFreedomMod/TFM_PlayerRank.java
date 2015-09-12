@@ -93,19 +93,7 @@ public enum TFM_PlayerRank {
             return HORSE;
         } else if (sender.getName().equals("DarkGamingDronze")) {
             return DARK;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        } else if (sender.getName().equals("Charlotte474747")) {
-            return CHAR;
         } else if (FOP_DEVELOPERS.contains(sender.getName())) {
-=======
->>>>>>> Stashed changes
-        }
-
-        else if (FOP_DEVELOPERS.contains(sender.getName()))
-        {
->>>>>>> origin/master
             return FOP_DEVELOPER;
         } else if (RF_DEVELOPERS.contains(sender.getName())) {
             return RF_DEVELOPER;
