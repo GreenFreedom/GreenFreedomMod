@@ -24,8 +24,7 @@ public class Command_cmdspy extends TFM_Command {
                 playerMsg("CommandSpy " + (playerdata.cmdspyEnabled() ? "enabled." : "disabled."));
                 return true;
             }
-            if (args[0].equals("off"))
-            {
+            if (args[0].equals("off")) {
                 if (!playerdata.cmdspyEnabled()) {
                     sender.sendMessage(ChatColor.RED + "CommandSpy is already disabled.");
                 }

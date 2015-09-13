@@ -95,5 +95,5 @@ public class Command_cage extends TFM_Command {
             TFM_Util.adminAction(sender.getName(), "Caging " + player.getName() + " in PURE_DARTH", true);
         }
         return true;
-        }
+    }
 }
