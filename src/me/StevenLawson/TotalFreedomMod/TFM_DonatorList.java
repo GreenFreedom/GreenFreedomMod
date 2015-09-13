@@ -494,7 +494,6 @@ public class TFM_DonatorList {
                 }
 
                 superadmin.setActivated(false);
-                TFM_TwitterHandler.delTwitter(superadmin.getLastLoginName());
             }
         }
 

@@ -5,7 +5,6 @@ import me.StevenLawson.TotalFreedomMod.TFM_Donator;
 import me.StevenLawson.TotalFreedomMod.TFM_DonatorList;
 import me.StevenLawson.TotalFreedomMod.TFM_DepreciationAggregator;
 import me.StevenLawson.TotalFreedomMod.TFM_PlayerData;
-import me.StevenLawson.TotalFreedomMod.TFM_TwitterHandler;
 import me.StevenLawson.TotalFreedomMod.TFM_Util;
 import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
@@ -134,11 +133,6 @@ public class Command_donatorlist extends TFM_Command {
 
                 TFM_Util.adminAction(sender.getName(), "Removing " + targetName + " from the donator list", true);
                 TFM_DonatorList.removeDonator(TFM_DepreciationAggregator.getOfflinePlayer(server, targetName));
-
-                // Twitterbot
-                if (TFM_ConfigEntry.TWITTERBOT_ENABLED.getBoolean()) {
-                    TFM_TwitterHandler.delTwitterVerbose(targetName, sender);
-                }
 
                 break;
             }

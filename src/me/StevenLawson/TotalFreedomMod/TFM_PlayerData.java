@@ -227,7 +227,7 @@ public class TFM_PlayerData {
         unfreezeTask = new BukkitRunnable() {
             @Override
             public void run() {
-                TFM_Util.adminAction("TotalFreedom", "Unfreezing " + player.getName(), false);
+                TFM_Util.adminAction("RubyFreedom", "Unfreezing " + player.getName(), false);
                 setFrozen(false);
             }
 
@@ -354,7 +354,7 @@ public class TFM_PlayerData {
         unmuteTask = new BukkitRunnable() {
             @Override
             public void run() {
-                TFM_Util.adminAction("TotalFreedom", "Unmuting " + player.getName(), false);
+                TFM_Util.adminAction("RubyFreedom", "Unmuting " + player.getName(), false);
                 setMuted(false);
             }
         }.runTaskLater(TotalFreedomMod.plugin, AUTO_PURGE);

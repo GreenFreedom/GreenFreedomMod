@@ -213,7 +213,7 @@ public class TFM_PlayerListener implements Listener {
                         break;
                     }
 
-                    case CARROT: {
+                    case CARROT_ITEM: {
                         if (!TFM_ConfigEntry.ALLOW_EXPLOSIONS.getBoolean()) {
                             break;
                         }

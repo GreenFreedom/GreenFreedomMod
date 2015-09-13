@@ -646,7 +646,6 @@ public class TFM_AdminList {
 
                 superadmin.setActivated(false);
                 Command_logs.deactivateSuperadmin(superadmin);
-                TFM_TwitterHandler.delTwitter(superadmin.getLastLoginName());
             }
         }
 

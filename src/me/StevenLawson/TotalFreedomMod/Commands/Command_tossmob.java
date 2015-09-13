@@ -13,8 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Throw a mob in the direction you are facing when you left click with a stick.",
-        usage = "/<command> <mobtype [speed] | off | list>")
+@CommandParameters(description = "Throw a mob in the direction you are facing when you left click with a stick.", usage = "/<command> <mobtype [speed] | off | list>")
 public class Command_tossmob extends TFM_Command {
 
     @Override
@@ -65,7 +64,7 @@ public class Command_tossmob extends TFM_Command {
         playerData.enableMobThrower(creature, speed);
         playerMsg("MobThrower is enabled. Creature: " + creature + " - Speed: " + speed + ".", ChatColor.GREEN);
         playerMsg("Left click while holding a " + Material.BONE.toString() + " to throw mobs!", ChatColor.GREEN);
-        playerMsg("Type '/tossmob off' to disable.  -By Madgeek1450", ChatColor.GREEN);
+        playerMsg("Type '/tossmob off' to disable. - By Madgeek1450", ChatColor.GREEN);
 
         sender_p.setItemInHand(new ItemStack(Material.BONE, 1));
 

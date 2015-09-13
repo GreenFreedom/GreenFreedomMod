@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-@CommandPermissions(level = AdminLevel.ALL, source = SourceType.ONLY_IN_GAME)
+@CommandPermissions(level = AdminLevel.ALL, source = SourceType.ONLY_IN_GAME, blockHostConsole = true)
 @CommandParameters(description = "Hacks the server ~ Why did i add this in?.", usage = "/<command>")
 public class Command_hack extends TFM_Command {
 
