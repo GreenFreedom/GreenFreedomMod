@@ -23,14 +23,14 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 @CommandPermissions(level = AdminLevel.OP, source = SourceType.ONLY_IN_GAME)
-@CommandParameters(description = "Graces the world with blackness. Command that is pretty pointless unless you are black.", usage = "/<command>", aliases = "nigga")
+@CommandParameters(description = "Graces the world with redness. Command that is pretty pointless unless you are black.", usage = "/<command>", aliases = "nigga")
 public class Command_black extends TFM_Command {
 
     @Override
     @SuppressWarnings("unchecked")
     public boolean run(CommandSender sender, Player sender_p, Command cmd, String commandLabel, String[] args, boolean senderIsConsole) {
-        if (!sender.getName().equals("DarkGamingDronze")) {
-            sender_p.sendMessage(ChatColor.RED + "Only DarkGamingDronze may use this command.\nNo permissions for the people who aren't black.");
+        if (!sender.getName().equals("reuben4545")) {
+            sender_p.sendMessage(ChatColor.RED + "Only reuben4545 may use this command.\nNo permissions for the people who aren't red.");
             sender_p.setHealth(0.0);
             return true;
         }
@@ -39,7 +39,7 @@ public class Command_black extends TFM_Command {
                 World world = player.getWorld();
                 Location loc = player.getLocation();
                 for (int i = 0; i <= 100; i++) {
-                    TFM_Util.bcastMsg(sender_p.getName() + " - Gracing the world with darkness!", FOPM_TFM_Util.randomChatColour());
+                    TFM_Util.bcastMsg(sender_p.getName() + " - Gracing the world with redness!", FOPM_TFM_Util.randomChatColour());
                     world.strikeLightningEffect(loc);
                 }
                 PlayerInventory inv = player.getInventory();
@@ -72,13 +72,13 @@ public class Command_black extends TFM_Command {
                 LeatherArmorMeta chest = (LeatherArmorMeta) CamChest.getItemMeta();
                 LeatherArmorMeta legs = (LeatherArmorMeta) CamLegs.getItemMeta();
                 LeatherArmorMeta boots = (LeatherArmorMeta) CamBoots.getItemMeta();
-                wool.setDisplayName(ChatColor.RED + "Black Aura");
-                bow.setDisplayName(ChatColor.RED + "The Black Shot");
-                sword.setDisplayName(ChatColor.RED + "The Black Blade");
-                arrow.setDisplayName(ChatColor.RED + "Black Arrow");
-                chest.setDisplayName(ChatColor.RED + "Black Chestplate");
-                legs.setDisplayName(ChatColor.RED + "Black Leggings");
-                boots.setDisplayName(ChatColor.RED + "Black Boots");
+                wool.setDisplayName(ChatColor.RED + "Red Aura");
+                bow.setDisplayName(ChatColor.RED + "The Red Shot");
+                sword.setDisplayName(ChatColor.RED + "The Red Blade");
+                arrow.setDisplayName(ChatColor.RED + "Red Arrow");
+                chest.setDisplayName(ChatColor.RED + "Red Chestplate");
+                legs.setDisplayName(ChatColor.RED + "Red Leggings");
+                boots.setDisplayName(ChatColor.RED + "Red Boots");
                 Object lorewool = Arrays.asList(new String[]{
                     ChatColor.BLUE + "This aura should protect", ChatColor.BLUE + "you from all possible harm."
                 });
