@@ -20,7 +20,7 @@ public enum TFM_PlayerRank {
     FAKEIMPOSTOR("a " + ChatColor.YELLOW + ChatColor.UNDERLINE + "FAKE Impostor", ChatColor.YELLOW.toString() + ChatColor.UNDERLINE + "[IMP]"),
     NON_OP("a " + ChatColor.GREEN + "Non-OP", ChatColor.GREEN.toString()),
     OP("an " + ChatColor.RED + "OP", ChatColor.RED + "[OP]"),
-    LEAD_SPECIALIST("the " + ChatColor.GREEN + "Lead Specialist", ChatColor.GREEN + "[L-Specialist]"),
+    REUBEN("the " + ChatColor.GREEN + "Cheif-Dev", ChatColor.GREEN + "(Chief-Dev)"),
     SUPER("a " + ChatColor.GOLD + "Super Admin", ChatColor.GOLD + "[SA]"),
     TELNET("a " + ChatColor.DARK_GREEN + "Super Telnet Admin", ChatColor.DARK_GREEN + "[STA]"),
     SENIOR("a " + ChatColor.LIGHT_PURPLE + "Senior Admin", ChatColor.LIGHT_PURPLE + "[SrA]"),
@@ -31,7 +31,7 @@ public enum TFM_PlayerRank {
     EXEC("an " + ChatColor.YELLOW + "Executive", ChatColor.YELLOW + "[Exec]"),
     CO_OWNER("a " + ChatColor.BLUE + "Co-Owner" + ChatColor.AQUA + " of " + ChatColor.RED + "RubyFreedom", ChatColor.BLUE + "[Co-Owner]"),
     MYSTERI("a " + ChatColor.GOLD + "Potato Caek", ChatColor.RED + "[Mysteri]"),
-    DARK("an " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + ", " + ChatColor.BLUE + "Founder" + ChatColor.AQUA + ", and the " + ChatColor.DARK_PURPLE + "Co-Chief Developer", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &8+ &9Founder&8]&9")),
+    DARK("The " + ChatColor.BLUE + "Owner" + ChatColor.AQUA + ", " + ChatColor.BLUE + "Founder" + ChatColor.AQUA + ", and hes even the " + ChatColor.DARK_PURPLE + "Forum Creator!", ChatColor.translateAlternateColorCodes('&', "&8[&4Owner &8+ &9Founder&8]&9")),
     CHAR("the " + ChatColor.DARK_PURPLE + "Probationary Co-Chief Forum Developer", ChatColor.translateAlternateColorCodes('&', "&8[&5PB Co-Chief F-Dev&8]")),
     CONSOLE("the " + ChatColor.DARK_PURPLE + "Console", ChatColor.DARK_PURPLE + "[Console]"),
     ANDY("a " + ChatColor.translateAlternateColorCodes('&', "&5Developer &b+ the &9Co-Owner&b!"), ChatColor.translateAlternateColorCodes('&', "&8[&5Developer &b+ &9Co-Owner&8]"));
@@ -79,29 +79,29 @@ public enum TFM_PlayerRank {
             return IMPOSTOR;
         } else if (DEVELOPERS.contains(sender.getName())) {
             return DEVELOPER;
-        } else if (sender.getName().equals("Joenmb")) {
+        } else if (sender.getName().equals("player")) {
             return CHAR;
         } else if (sender.getName().equals("reuben4545")) {
-            return LEAD_SPECIALIST;
-        } else if (sender.getName().equals("AndySixx")) {
+            return REUBEN;
+        } else if (sender.getName().equals("player")) {
             return ANDY;
-        } else if (sender.getName().equals("tylerhyperHD")) {
+        } else if (sender.getName().equals("player")) {
             return LEAD_DEVELOPER;
-        } else if (sender.getName().equals("MysteriAce")) {
+        } else if (sender.getName().equals("player")) {
             return MYSTERI;
-        } else if (sender.getName().equals("DarkHorse108")) {
+        } else if (sender.getName().equals("player")) {
             return HORSE;
-        } else if (sender.getName().equals("DarkGamingDronze")) {
+        } else if (sender.getName().equals("TheDarkDragon252")) {
             return DARK;
-        } else if (sender.getName().equals("Charlotte474747")) {
+        } else if (sender.getName().equals("player")) {
             return CHAR;
         } else if (FOP_DEVELOPERS.contains(sender.getName())) {
             return FOP_DEVELOPER;
         } else if (RF_DEVELOPERS.contains(sender.getName())) {
             return RF_DEVELOPER;
-        } else if (SYS.contains(sender.getName())) {
+        } else if (SYS.contains(sender.getName("Gerik108"))) {
             return SYS_ADMIN;
-        } else if (sender.getName().equals("MysteriAce")) {
+        } else if (sender.getName().equals("player")) {
             return MYSTERI;
         } else if (EXECUTIVES.contains(sender.getName())) {
             return EXEC;
